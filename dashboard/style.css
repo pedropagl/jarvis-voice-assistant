@@ -1,0 +1,538 @@
+/* dashboard/style.css  (FASE 11)
+   Tema HUD futurista escuro da JARVIS. Dois modos: .mode-tv e .mode-pc.
+
+   >>> AJUSTES RAPIDOS: mude as variaveis em :root abaixo. <<<
+   - Cores, brilho, tamanho de fonte e velocidade das animacoes ficam todos aqui.
+*/
+
+:root {
+  /* ---- Cores ---- */
+  --bg-0: #03070f;            /* fundo mais escuro */
+  --bg-1: #061018;           /* fundo dos paineis */
+  --bg-2: #0a1a26;           /* destaque de painel */
+  --line: #103349;           /* bordas/linhas do HUD */
+  --accent: #38e0ff;         /* ciano principal */
+  --accent-2: #00ffa3;       /* verde tecnologico */
+  --text: #d6f3ff;           /* texto claro */
+  --text-dim: #6f93a8;       /* texto secundario */
+  --warn: #ffb020;           /* alerta */
+  --error: #ff4d5e;          /* erro */
+
+  /* ---- Tipografia (TV usa escala maior; ver .mode-tv) ---- */
+  --font: "Segoe UI", "Trebuchet MS", system-ui, sans-serif;
+  --fs-response: clamp(28px, 4vw, 64px);   /* resposta principal */
+  --fs-title: clamp(14px, 1.2vw, 22px);
+  --fs-body: clamp(13px, 1vw, 18px);
+
+  /* ---- Animacoes ---- */
+  --spin-slow: 18s;          /* rotacao dos aneis */
+  --pulse: 2.4s;             /* pulso do nucleo */
+  --glow: 0 0 12px;          /* brilho padrao */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background:
+    radial-gradient(1200px 800px at 50% -10%, #0b2233 0%, var(--bg-0) 60%),
+    var(--bg-0);
+  color: var(--text);
+  font-family: var(--font);
+  overflow: hidden;
+}
+
+/* Grade sutil de fundo (efeito HUD) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56, 224, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 224, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===================== GRADE PRINCIPAL ===================== */
+.hud-grid {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  /* minmax(0,...) deixa colunas/linhas encolherem abaixo do conteudo,
+     evitando que o texto grande do centro estoure a altura da tela. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    "header header header"
+    "left   center right"
+    "footer footer footer";
+  overflow: hidden;
+}
+
+.area-header { grid-area: header; }
+.area-left   { grid-area: left; }
+.area-center { grid-area: center; }
+.area-right  { grid-area: right; }
+.area-footer { grid-area: footer; }
+
+/* ===================== PAINEIS ===================== */
+.panel {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-0));
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5), 0 0 1px var(--accent);
+  min-height: 0;   /* permite que o painel encolha dentro da grade */
+  min-width: 0;
+}
+/* Paineis laterais rolam internamente se tiverem muito conteudo (modo PC) */
+.area-left, .area-right { overflow-y: auto; }
+.area-center { overflow: hidden; }
+/* cantos brilhantes do HUD */
+.panel::before,
+.panel::after {
+  content: "";
+  position: absolute;
+  width: 14px; height: 14px;
+  border: 2px solid var(--accent);
+  opacity: 0.6;
+}
+.panel::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; border-radius: 6px 0 0 0; }
+.panel::after  { bottom: -1px; right: -1px; border-left: 0; border-top: 0; border-radius: 0 0 6px 0; }
+
+.panel-title {
+  font-size: var(--fs-title);
+  letter-spacing: 3px;
+  color: var(--accent);
+  text-shadow: var(--glow) rgba(56, 224, 255, 0.5);
+  margin-bottom: 12px;
+}
+.sub-title {
+  font-size: calc(var(--fs-title) * 0.8);
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  margin: 16px 0 8px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+.alert-title { color: var(--warn); }
+
+/* ===================== TOPO ===================== */
+.area-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 22px;
+}
+.brand { display: flex; align-items: baseline; gap: 12px; }
+.brand-dot {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: var(--glow) var(--accent);
+  align-self: center;
+  animation: blink 2s infinite ease-in-out;
+}
+.brand-name {
+  font-size: clamp(26px, 3vw, 52px);
+  letter-spacing: 8px;
+  color: #fff;
+  text-shadow: var(--glow) var(--accent);
+}
+.brand-sub { color: var(--text-dim); letter-spacing: 3px; font-size: var(--fs-body); }
+
+.status-box {
+  display: flex; align-items: center; gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 8px 20px;
+  background: rgba(0,0,0,0.3);
+}
+.status-led {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: var(--glow) var(--accent);
+}
+.status-text {
+  font-size: var(--fs-title);
+  letter-spacing: 3px;
+  color: var(--text);
+}
+.clock { text-align: right; }
+.clock-time { font-size: clamp(20px, 2vw, 40px); color: #fff; letter-spacing: 2px; }
+.clock-date { font-size: var(--fs-body); color: var(--text-dim); letter-spacing: 2px; }
+
+/* ---- Operador identificado pela voz (biometria local) ---- */
+.operator-box {
+  display: flex; align-items: center; gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 8px 20px;
+  background: rgba(0, 255, 163, 0.06);
+}
+.op-label { color: var(--text-dim); font-size: var(--fs-body); letter-spacing: 2px; }
+.op-name {
+  font-size: var(--fs-title);
+  letter-spacing: 1px;
+  color: var(--accent-2);
+  text-shadow: var(--glow) rgba(0, 255, 163, 0.4);
+}
+.op-name.op-unknown { color: var(--text-dim); text-shadow: none; }
+.op-conf { color: var(--text-dim); font-size: var(--fs-body); }
+
+/* ===================== CHAVE/VALOR ===================== */
+.kv { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin: 6px 0; }
+.kv .k { color: var(--text-dim); font-size: var(--fs-body); letter-spacing: 1px; }
+.kv .v { color: var(--text); font-size: var(--fs-body); text-align: right; }
+.kv .v.big { font-size: clamp(22px, 2.4vw, 44px); color: var(--accent); text-shadow: var(--glow) rgba(56,224,255,0.4); }
+
+/* ---- Extrusores ---- */
+.extruders { display: flex; flex-direction: column; gap: 8px; }
+.extruder {
+  display: flex; align-items: center; gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--bg-2);
+}
+.extruder .ex-num {
+  flex: 0 0 auto;
+  width: 28px; height: 28px; border-radius: 6px;
+  display: grid; place-items: center;
+  background: rgba(56,224,255,0.12);
+  color: var(--accent); font-weight: bold;
+}
+.extruder .ex-mat { font-size: var(--fs-body); }
+.swatch { width: 14px; height: 14px; border-radius: 50%; border: 1px solid #0008; margin-left: auto; }
+
+/* ---- Peca recomendada ---- */
+.recommended {
+  border: 1px solid var(--accent-2);
+  border-radius: 10px;
+  padding: 12px;
+  background: rgba(0, 255, 163, 0.06);
+  color: var(--accent-2);
+  font-size: var(--fs-body);
+  text-shadow: 0 0 8px rgba(0,255,163,0.3);
+}
+
+/* ===================== CENTRO ===================== */
+.area-center {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+/* Nucleo HUD circular animado */
+.hud-core {
+  position: relative;
+  width: clamp(160px, 18vw, 280px);
+  aspect-ratio: 1;
+  display: grid; place-items: center;
+  flex: 0 0 auto;
+}
+.ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid transparent;
+}
+.ring-1 { border-top-color: var(--accent); border-bottom-color: var(--accent); animation: spin var(--spin-slow) linear infinite; }
+.ring-2 { inset: 14%; border-left-color: var(--accent-2); border-right-color: var(--accent-2); animation: spin calc(var(--spin-slow) * 0.6) linear infinite reverse; opacity: 0.8; }
+.ring-3 { inset: 28%; border-top-color: #fff; animation: spin calc(var(--spin-slow) * 0.4) linear infinite; opacity: 0.5; }
+.core-pulse {
+  width: 36%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle, var(--accent) 0%, rgba(56,224,255,0.1) 70%, transparent 71%);
+  animation: pulse var(--pulse) ease-in-out infinite;
+}
+
+/* Barras de audio (escondidas por padrao; aparecem em ouvindo/falando) */
+.audio-bars {
+  position: absolute;
+  display: none;
+  align-items: flex-end;
+  gap: 5px;
+  height: 40%;
+}
+.audio-bars span {
+  width: 6px; height: 30%;
+  background: var(--accent);
+  border-radius: 3px;
+  box-shadow: var(--glow) var(--accent);
+  animation: equalize 0.9s ease-in-out infinite;
+}
+.audio-bars span:nth-child(2) { animation-delay: .1s; }
+.audio-bars span:nth-child(3) { animation-delay: .2s; }
+.audio-bars span:nth-child(4) { animation-delay: .3s; }
+.audio-bars span:nth-child(5) { animation-delay: .15s; }
+.audio-bars span:nth-child(6) { animation-delay: .25s; }
+.audio-bars span:nth-child(7) { animation-delay: .05s; }
+
+/* Quando ouvindo/falando: mostra barras e some o pulso */
+body.audio-active .audio-bars { display: flex; }
+body.audio-active .core-pulse { opacity: 0; }
+
+/* Resposta principal */
+.response-wrap { max-width: 92%; }
+.response-label { color: var(--text-dim); letter-spacing: 4px; font-size: var(--fs-title); margin-bottom: 10px; }
+.main-response {
+  font-size: var(--fs-response);
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 0 14px rgba(56,224,255,0.35);
+  font-weight: 600;
+}
+
+.center-extra { width: 100%; margin-top: 6px; }
+.transcript-inline {
+  display: flex; gap: 10px; justify-content: center; align-items: baseline;
+  color: var(--text-dim);
+}
+
+/* ===================== FALTANTES / ALERTAS ===================== */
+.missing-parts { display: flex; flex-direction: column; gap: 8px; }
+.missing-item {
+  display: flex; align-items: center; gap: 10px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--warn);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--bg-2);
+  font-size: var(--fs-body);
+}
+.missing-item .qty {
+  flex: 0 0 auto;
+  min-width: 34px; height: 34px; padding: 0 8px;
+  display: grid; place-items: center;
+  background: var(--warn); color: #1a1200; font-weight: bold;
+  border-radius: 8px;
+}
+.missing-item .pinfo { display: flex; flex-direction: column; }
+.missing-item .pinfo small { color: var(--text-dim); }
+
+.alerts { display: flex; flex-direction: column; gap: 6px; }
+.alert-item {
+  border: 1px solid var(--warn);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: rgba(255,176,32,0.08);
+  color: var(--warn);
+  font-size: var(--fs-body);
+}
+.alert-empty { color: var(--text-dim); font-size: var(--fs-body); }
+
+/* ===================== INFERIOR ===================== */
+.area-footer { display: flex; gap: 24px; padding: 12px 20px; align-items: flex-start; }
+.footer-col { flex: 1; min-width: 0; }
+.mini-label { display: block; color: var(--text-dim); letter-spacing: 2px; font-size: calc(var(--fs-body) * 0.85); margin-bottom: 6px; }
+.transcript-text { color: var(--text); font-size: var(--fs-body); }
+.history { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.history li { color: var(--text-dim); font-size: calc(var(--fs-body) * 0.95); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.history li b { color: var(--accent); margin-right: 8px; }
+.log-summary { color: var(--text-dim); font-size: calc(var(--fs-body) * 0.9); }
+
+/* ===================== CONTROLES ===================== */
+.controls {
+  position: fixed; bottom: 16px; right: 16px; z-index: 10;
+  display: flex; align-items: center; gap: 8px;
+}
+.ctrl-btn {
+  background: rgba(6,16,24,0.85);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-family: var(--font);
+  font-size: 14px; letter-spacing: 1px;
+  cursor: pointer;
+  transition: background .2s, box-shadow .2s;
+}
+.ctrl-btn:hover { background: rgba(56,224,255,0.15); box-shadow: var(--glow) rgba(56,224,255,0.4); }
+.conn-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent-2); box-shadow: var(--glow) var(--accent-2); }
+.conn-dot.off { background: var(--error); box-shadow: var(--glow) var(--error); }
+
+/* ----- Caixa de pergunta (fixa embaixo, centralizada) ----- */
+.ask-bar {
+  position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+  z-index: 10;
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(6, 16, 24, 0.92);
+  border: 1px solid var(--accent);
+  border-radius: 30px;
+  padding: 8px 10px 8px 18px;
+  box-shadow: 0 0 18px rgba(56, 224, 255, 0.25);
+  width: min(680px, 70vw);
+}
+.ask-input {
+  flex: 1; min-width: 0;
+  background: transparent; border: none; outline: none;
+  color: var(--text); font-family: var(--font);
+  font-size: clamp(14px, 1.2vw, 18px);
+}
+.ask-input::placeholder { color: var(--text-dim); }
+.ask-falar {
+  display: flex; align-items: center; gap: 5px;
+  color: var(--text-dim); font-size: 13px; white-space: nowrap; cursor: pointer;
+}
+.ask-falar input { accent-color: var(--accent); }
+
+/* ===================== ESTADOS (cores por status) ===================== */
+/* Cada status pinta o LED, o texto e o nucleo do HUD. */
+body[data-status] .status-led,
+body[data-status] .core-pulse { transition: background .3s, box-shadow .3s; }
+
+body[data-status="ouvindo"]      { --status-color: var(--accent); }
+body[data-status="transcrevendo"]{ --status-color: #7ad7ff; }
+body[data-status="consultando"]  { --status-color: #b98bff; }
+body[data-status="pensando"]     { --status-color: #b98bff; }
+body[data-status="respondendo"]  { --status-color: var(--accent-2); }
+body[data-status="aguardando"]   { --status-color: var(--text-dim); }
+body[data-status="erro"]         { --status-color: var(--error); }
+body[data-status="dados_insuficientes"] { --status-color: var(--warn); }
+
+body[data-status] .status-led { background: var(--status-color); box-shadow: var(--glow) var(--status-color); }
+body[data-status] .ring-1 { border-top-color: var(--status-color); border-bottom-color: var(--status-color); }
+body[data-status] .audio-bars span { background: var(--status-color); box-shadow: var(--glow) var(--status-color); }
+
+/* Erro e dados insuficientes: borda do centro pulsa */
+body[data-status="erro"] .area-center { animation: borderFlash 1s ease-in-out infinite; border-color: var(--error); }
+body[data-status="dados_insuficientes"] .area-center { border-color: var(--warn); }
+body[data-status="erro"] .main-response { color: var(--error); text-shadow: 0 0 14px rgba(255,77,94,0.5); }
+
+/* ===================== MODOS ===================== */
+/* TV: fonte maior, esconde detalhes tecnicos, mais respiro */
+.mode-tv { --fs-response: clamp(34px, 5vw, 84px); --fs-title: clamp(16px, 1.4vw, 26px); --fs-body: clamp(15px, 1.2vw, 22px); }
+.mode-tv .pc-only { display: none !important; }
+
+/* PC: compacto, mostra tudo */
+.mode-pc { --fs-response: clamp(22px, 2.4vw, 40px); --fs-title: clamp(12px, 1vw, 16px); --fs-body: clamp(12px, 0.95vw, 15px); }
+.mode-pc .hud-core { width: clamp(120px, 12vw, 180px); }
+.mode-pc .hud-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr); gap: 10px; padding: 10px; }
+
+/* ===================== RESPONSIVO ===================== */
+/* Telas estreitas (PC em janela pequena / monitor vertical): empilha.
+   Os seletores repetem .mode-tv/.mode-pc para vencer em especificidade as
+   regras de coluna dos modos (senao o empilhamento nao se aplicaria). */
+@media (max-aspect-ratio: 1/1), (max-width: 900px) {
+  .mode-tv .hud-grid,
+  .mode-pc .hud-grid,
+  .hud-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "header"
+      "center"
+      "left"
+      "right"
+      "footer";
+    overflow: visible;
+    height: auto; min-height: 100vh;
+  }
+  body { overflow-y: auto; }
+  .area-left, .area-right, .area-center { overflow: visible; }
+  .area-footer { flex-direction: column; gap: 12px; }
+}
+
+/* Acessibilidade: respeita quem desativa animacoes no SO */
+@media (prefers-reduced-motion: reduce) {
+  .ring, .core-pulse, .audio-bars span, .brand-dot { animation: none !important; }
+}
+
+/* ===================== KEYFRAMES ===================== */
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse {
+  0%, 100% { transform: scale(0.85); opacity: 0.7; }
+  50%      { transform: scale(1.1); opacity: 1; }
+}
+@keyframes equalize {
+  0%, 100% { height: 25%; }
+  50%      { height: 95%; }
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+@keyframes borderFlash {
+  0%, 100% { box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 0 2px var(--error); }
+  50%      { box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 0 24px var(--error); }
+}
+
+/* ===================== MODAL: CADASTRO DE VOZ ===================== */
+.voz-overlay {
+  position: fixed; inset: 0; z-index: 50;
+  background: rgba(2, 8, 14, 0.82);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+}
+.voz-overlay[hidden] { display: none; }
+
+.voz-modal {
+  position: relative;
+  width: min(560px, 92vw);
+  background: linear-gradient(180deg, var(--bg-2), var(--bg-1));
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(56, 224, 255, 0.25), inset 0 0 30px rgba(0,0,0,0.4);
+  padding: 28px 30px;
+  color: var(--text);
+}
+.voz-x {
+  position: absolute; top: 12px; right: 16px;
+  background: none; border: none; color: var(--text-dim);
+  font-size: 28px; line-height: 1; cursor: pointer;
+}
+.voz-x:hover { color: var(--accent); }
+.voz-titulo { font-size: 24px; color: var(--accent); margin-bottom: 8px; }
+.voz-sub { font-size: var(--fs-body); color: var(--text-dim); margin-bottom: 20px; }
+
+.voz-label { display: block; font-size: 13px; color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.voz-input {
+  width: 100%; padding: 12px 14px; font-size: 18px;
+  background: var(--bg-0); color: var(--text);
+  border: 1px solid var(--line); border-radius: 8px; margin-bottom: 16px;
+}
+.voz-input:focus { outline: none; border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(56,224,255,0.3); }
+.voz-btn-primary {
+  width: 100%; padding: 12px; font-size: 16px;
+  background: var(--accent); color: var(--bg-0); border: none;
+  border-radius: 8px; cursor: pointer; font-weight: 600;
+}
+.voz-btn-primary:hover { box-shadow: 0 0 16px rgba(56,224,255,0.5); }
+
+/* Progresso */
+.voz-fase { font-size: 20px; color: var(--accent-2); text-align: center;
+  margin-bottom: 16px; font-weight: 600; }
+.voz-frase-box {
+  background: var(--bg-0); border: 1px solid var(--line);
+  border-radius: 10px; padding: 18px; text-align: center; margin-bottom: 16px;
+}
+.voz-frase-label { font-size: 11px; color: var(--text-dim);
+  letter-spacing: 2px; }
+.voz-frase { font-size: 22px; color: var(--text); margin-top: 8px;
+  line-height: 1.4; min-height: 1.4em; }
+.voz-passos { text-align: center; color: var(--text-dim);
+  font-size: 14px; margin-bottom: 8px; }
+.voz-msg { text-align: center; color: var(--warn); font-size: 14px;
+  min-height: 1.2em; }
+
+/* Barras de microfone (animam quando .ativo) */
+.voz-mic { display: flex; gap: 5px; justify-content: center;
+  align-items: flex-end; height: 36px; margin-bottom: 14px; }
+.voz-mic span {
+  width: 6px; height: 8px; background: var(--text-dim); border-radius: 3px;
+  transition: height 0.15s;
+}
+.voz-mic.ativo span { background: var(--accent); }
+.voz-mic.ativo span:nth-child(1) { animation: vozBar 0.7s infinite ease-in-out; }
+.voz-mic.ativo span:nth-child(2) { animation: vozBar 0.7s infinite ease-in-out 0.1s; }
+.voz-mic.ativo span:nth-child(3) { animation: vozBar 0.7s infinite ease-in-out 0.2s; }
+.voz-mic.ativo span:nth-child(4) { animation: vozBar 0.7s infinite ease-in-out 0.3s; }
+.voz-mic.ativo span:nth-child(5) { animation: vozBar 0.7s infinite ease-in-out 0.15s; }
+@keyframes vozBar { 0%,100% { height: 8px; } 50% { height: 34px; } }
+
+.voz-cadastrados { margin-top: 22px; padding-top: 16px;
+  border-top: 1px solid var(--line); }
+.voz-pessoas { margin-top: 8px; font-size: 15px; color: var(--text); }

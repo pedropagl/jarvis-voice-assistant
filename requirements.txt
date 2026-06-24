@@ -1,0 +1,46 @@
+# JARVIS - dependencias
+# ---------------------
+# FASE 1: boot.
+python-dotenv==1.0.1
+
+# FASE 7: cerebro de linguagem (provedor escolhido pelo .env: KILO > GEMINI > LOCAL).
+# - openai: usado para o gateway Kilo AI (API compativel com OpenAI).
+# - google-generativeai: usado para o Gemini direto.
+# Sem nenhuma chave configurada, a JARVIS roda em MODO LOCAL (interpretador
+# deterministico) e nao exige nenhuma das duas libs para testar o roteamento.
+openai==2.43.0
+google-generativeai==0.8.3
+
+# FASE 8: entrada de voz (microfone + transcricao).
+# No Python 3.13, instale direto pelo pip (NAO use pipwin — quebrado pelo js2py):
+#   pip install SpeechRecognition PyAudio
+SpeechRecognition==3.16.1
+PyAudio==0.2.14
+
+# FASE 9: saida de voz (Text-to-Speech).
+#   - edge-tts + pygame: vozes NEURAIS (naturais, online). Motor padrao.
+#   - pyttsx3: vozes do Windows (offline, reserva).
+edge-tts==7.2.8
+pygame==2.6.1
+pyttsx3==2.99
+
+# FASE 13: biometria de voz (identifica QUEM esta falando). 100% LOCAL, ZERO
+# tokens de API. O Resemblyzer depende de torch/librosa; o webrtcvad-wheels
+# substitui o webrtcvad original (que exige compilador C++ no Windows).
+# Instalacao no Python 3.13 (Windows), nesta ordem:
+#   pip install numpy scipy librosa torch --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
+#   pip install webrtcvad-wheels
+#   pip install resemblyzer --no-deps
+resemblyzer==0.1.4
+webrtcvad-wheels==2.0.14
+# torch (CPU), librosa, numpy, scipy entram junto do resemblyzer.
+
+# FASE 14: dados reais via MCP (catos). A JARVIS conecta como cliente MCP ao
+# sistema da empresa (tickets, impressoras, producao) usando o SDK oficial.
+# Conexao via Streamable HTTP direto (nao precisa de Node/npx em runtime).
+#   pip install mcp
+mcp==1.18.0
+
+# As proximas fases adicionarao (comentadas de proposito):
+#
+# FASE 11 - Painel/backend:  fastapi, uvicorn, websockets, jinja2

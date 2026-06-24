@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+voiceprints/
+data/dashboard_state.json
+data/voiceprints.json
+logs/
+*.jsonl
+*.log
+.claude/

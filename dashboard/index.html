@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--
+  dashboard/index.html  (FASE 11)
+  Painel futurista da JARVIS - estilo HUD tecnologico, escuro, alto contraste.
+  Funciona em dois modos: TV (tela cheia, fonte grande) e PC (compacto, mais detalhes).
+  Le data/dashboard_state.json (servido localmente) e atualiza sozinho. Offline.
+-->
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JARVIS - Painel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="mode-tv">
+  <div id="grid" class="hud-grid">
+
+    <!-- ===================== TOPO ===================== -->
+    <header class="area-header panel">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <h1 class="brand-name">JARVIS</h1>
+        <span class="brand-sub">central de produção</span>
+      </div>
+
+      <div class="status-box">
+        <span id="status-led" class="status-led"></span>
+        <span id="status-text" class="status-text">AGUARDANDO COMANDO</span>
+      </div>
+
+      <div class="operator-box" title="Pessoa identificada pela voz (biometria local)">
+        <span class="op-label">OPERADOR</span>
+        <span id="op-name" class="op-name">—</span>
+        <span id="op-conf" class="op-conf"></span>
+      </div>
+
+      <div class="clock">
+        <div id="clock-time" class="clock-time">--:--:--</div>
+        <div id="clock-date" class="clock-date">--/--/----</div>
+      </div>
+    </header>
+
+    <!-- ===================== LADO ESQUERDO ===================== -->
+    <section class="area-left panel">
+      <h2 class="panel-title">MÁQUINA</h2>
+
+      <div class="kv">
+        <span class="k">Código</span>
+        <span id="m-id" class="v big">--</span>
+      </div>
+      <div class="kv">
+        <span class="k">Status</span>
+        <span id="m-status" class="v">--</span>
+      </div>
+      <div class="kv pc-only">
+        <span class="k">Modelo</span>
+        <span id="m-model" class="v">--</span>
+      </div>
+
+      <h3 class="sub-title">EXTRUSORES</h3>
+      <div id="extruders" class="extruders"></div>
+
+      <h3 class="sub-title">PRODUÇÃO PENDENTE</h3>
+      <div id="recommended" class="recommended">--</div>
+    </section>
+
+    <!-- ===================== CENTRO ===================== -->
+    <main class="area-center panel">
+      <div class="hud-core" id="hud-core">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+        <div class="ring ring-3"></div>
+        <div class="core-pulse"></div>
+        <div id="audio-bars" class="audio-bars">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="response-wrap">
+        <div class="response-label">RESPOSTA</div>
+        <div id="main-response" class="main-response">JARVIS iniciada. Aguardando comando.</div>
+      </div>
+
+      <!-- No modo PC, transcricao + historico ficam no centro -->
+      <div class="center-extra pc-only">
+        <div class="transcript-inline">
+          <span class="mini-label">VOCÊ DISSE</span>
+          <span id="operator-text-pc" class="transcript-text">--</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===================== LADO DIREITO ===================== -->
+    <section class="area-right panel">
+      <h2 class="panel-title">TICKET</h2>
+      <div class="kv">
+        <span class="k">Número</span>
+        <span id="t-id" class="v">--</span>
+      </div>
+      <div class="kv">
+        <span class="k">Data</span>
+        <span id="t-date" class="v">--</span>
+      </div>
+      <div class="kv pc-only">
+        <span class="k">Cliente</span>
+        <span id="t-client" class="v">--</span>
+      </div>
+
+      <h3 class="sub-title">PEÇAS FALTANTES</h3>
+      <div id="missing-parts" class="missing-parts"></div>
+
+      <h3 class="sub-title alert-title">ALERTAS</h3>
+      <div id="alerts" class="alerts"></div>
+    </section>
+
+    <!-- ===================== INFERIOR ===================== -->
+    <footer class="area-footer panel">
+      <div class="footer-col transcript-col">
+        <span class="mini-label">TEXTO TRANSCRITO</span>
+        <span id="operator-text" class="transcript-text">--</span>
+      </div>
+      <div class="footer-col history-col">
+        <span class="mini-label">ÚLTIMAS PERGUNTAS</span>
+        <ul id="history" class="history"></ul>
+      </div>
+      <div class="footer-col log-col pc-only">
+        <span class="mini-label">LOG RESUMIDO</span>
+        <span id="log-summary" class="log-summary">aguardando...</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ===================== CAIXA DE PERGUNTA ===================== -->
+  <form id="ask-form" class="ask-bar" autocomplete="off">
+    <input id="ask-input" class="ask-input" type="text"
+           placeholder="Escreva sua pergunta e tecle Enter..." />
+    <label class="ask-falar" title="Falar a resposta em voz alta">
+      <input id="ask-falar" type="checkbox" checked /> falar
+    </label>
+    <button id="ask-send" class="ctrl-btn" type="submit">Enviar</button>
+  </form>
+
+  <!-- ===================== CONTROLES ===================== -->
+  <div class="controls">
+    <button id="btn-voz" class="ctrl-btn" title="Cadastrar voz de uma pessoa do lab">🎙 Cadastrar Voz</button>
+    <button id="btn-mode" class="ctrl-btn" title="Alternar TV / PC (tecla M)">Modo: TV</button>
+    <button id="btn-fs" class="ctrl-btn" title="Tela cheia (tecla F)">Tela cheia</button>
+    <span id="conn" class="conn-dot" title="Conexão com os dados locais"></span>
+  </div>
+
+  <!-- ===================== MODAL: CADASTRO DE VOZ ===================== -->
+  <div id="voz-overlay" class="voz-overlay" hidden>
+    <div class="voz-modal" role="dialog" aria-modal="true" aria-labelledby="voz-titulo">
+      <button id="voz-fechar" class="voz-x" title="Fechar (Esc)">×</button>
+      <h2 id="voz-titulo" class="voz-titulo">🎙 Cadastro de Voz</h2>
+      <p class="voz-sub">
+        A pessoa fala no microfone do computador do JARVIS. A voz fica registrada
+        localmente para identificar quem autoriza cada ação.
+      </p>
+
+      <!-- Formulario inicial -->
+      <div id="voz-form">
+        <label class="voz-label" for="voz-nome">Nome da pessoa</label>
+        <input id="voz-nome" class="voz-input" type="text"
+               placeholder="Ex.: Ana, administrador..." autocomplete="off" />
+        <button id="voz-iniciar" class="ctrl-btn voz-btn-primary">Iniciar cadastro</button>
+      </div>
+
+      <!-- Progresso (durante a gravacao) -->
+      <div id="voz-progresso" class="voz-progresso" hidden>
+        <div class="voz-fase" id="voz-fase">Preparando...</div>
+        <div class="voz-frase-box">
+          <span class="voz-frase-label">LEIA EM VOZ ALTA</span>
+          <div id="voz-frase" class="voz-frase">—</div>
+        </div>
+        <div class="voz-mic" id="voz-mic">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="voz-passos" id="voz-passos">—</div>
+        <div id="voz-msg" class="voz-msg"></div>
+      </div>
+
+      <!-- Lista de cadastrados -->
+      <div class="voz-cadastrados">
+        <span class="voz-frase-label">JÁ CADASTRADOS</span>
+        <div id="voz-pessoas" class="voz-pessoas">—</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
