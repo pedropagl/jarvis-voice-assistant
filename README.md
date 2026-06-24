@@ -1,58 +1,66 @@
-# JARVIS — Assistente de Produção (Fase 1: Arquitetura)
+# JARVIS — Assistente de Voz para Laboratório de Impressão 3D
 
-Assistente de voz para manufatura / impressão 3D. **Modo somente leitura** nesta versão:
-a JARVIS apenas consulta dados, nunca altera, apaga ou modifica produção. Os dados são
-**simulados** em arquivos JSON na pasta `data/`.
+Assistente de voz com IA desenvolvido para o laboratório de impressão 3D
+do Grupo Odilon Santos. Integrado ao sistema de produção real da empresa
+via protocolo MCP (Model Context Protocol).
 
-> Esta entrega cobre **apenas a Fase 1**: estrutura, arquivos base e boot. Sem voz, sem
-> Gemini, sem consulta avançada e sem interface ainda.
+## O problema
 
-## Estrutura
-```
-jarvis_empresa/
-├── main.py                 # Boot: carrega dados e confirma que o projeto inicia
-├── requirements.txt        # Dependencias (Fase 1: apenas python-dotenv)
-├── .env.example            # Modelo de variaveis de ambiente (copiar para .env)
-├── .gitignore
-├── core/                   # Cerebro da assistente (voz, Gemini, roteamento, seguranca, logs)
-├── company_system/         # Acesso aos dados da empresa (maquinas, pecas, tickets, regras)
-├── data/                   # Bases simuladas em JSON (somente leitura)
-├── dashboard/              # Painel da TV (placeholders; construido na Fase 11)
-└── logs/                   # Registro de interacoes (interactions.log)
-```
+O laboratório opera ~8 impressoras 3D simultaneamente. Consultar o status
+de uma máquina, verificar tickets abertos ou agendar uma impressão exigia
+acessar o sistema manualmente — interrompendo o fluxo de trabalho do operador.
 
-## Como rodar no Windows (PowerShell)
+## O que o JARVIS faz
 
-1. **Criar a pasta do projeto** e colocar os arquivos dentro dela (ou descompactar o zip).
-   ```powershell
-   cd C:\Projetos
-   cd jarvis_empresa
-   ```
+- Responde perguntas por voz em tempo real ("qual o status da M04?",
+  "quais peças estão faltando no ticket 312?")
+- Executa ações no sistema de produção com confirmação obrigatória
+  (agendar mesa, enviar job para impressora, registrar resultado)
+- Identifica o operador por **biometria de voz** (100% local, sem dados
+  enviados para nuvem) para rastreabilidade de cada ação
+- Exibe um **dashboard ao vivo** em TV no laboratório com status das
+  máquinas, tickets urgentes e produção pendente
+- Registra métricas de impacto em background (tempo economizado vs.
+  processo manual)
 
-2. **Criar e ativar o ambiente virtual:**
-   ```powershell
-   python -m venv .venv
-   .\.venv\Scripts\Activate.ps1
-   ```
-   > Se o PowerShell bloquear a ativação, rode uma vez:
-   > `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
-   > (No Prompt de Comando, a ativação é `.\.venv\Scripts\activate.bat`.)
+## Arquitetura
+Microfone → Transcrição (Whisper local)
+→ Wake word ("Jarvis")
+→ LLM via API (Kilo/Gemini)
+→ Ferramentas MCP (leitura + 4 ações liberadas)
+→ Resposta em voz (TTS local)
+→ Dashboard HTML/JS (atualizado em tempo real)
+→ SQLite (métricas de impacto em background)
 
-3. **Instalar as dependências:**
-   ```powershell
-   pip install -r requirements.txt
-   ```
+## Stack
 
-4. **Configurar o ambiente:** copie `.env.example` para `.env`.
-   ```powershell
-   copy .env.example .env
-   ```
-   Na Fase 1 não é preciso preencher a `GEMINI_API_KEY` (ela só será usada na Fase 7).
+| Camada | Tecnologia |
+|---|---|
+| Linguagem | Python 3.13 |
+| LLM | Gemini via Kilo API |
+| Integração | MCP (Model Context Protocol) |
+| Biometria de voz | webrtcvad + embeddings locais |
+| Transcrição | Whisper (local) |
+| Dashboard | HTML + JS + CSS (sem framework) |
+| Métricas | SQLite nativo |
+| Deploy | Windows 11, execução local |
 
-5. **Rodar o projeto:**
-   ```powershell
-   python main.py
-   ```
-   Você deve ver o banner da JARVIS, o resumo do boot (5 máquinas, 5 peças, 3 tickets,
-   modo somente leitura) e a confirmação de inicialização. O mesmo registro aparece em
-   `logs/interactions.log`.
+## Segurança
+
+- Credenciais apenas no `.env`, nunca no código
+- Separação estrita entre ferramentas de leitura e ações de escrita
+- Ações de escrita bloqueadas por padrão — apenas 4 aprovadas, todas
+  com confirmação obrigatória antes de executar
+- Biometria processada localmente (zero tokens enviados para APIs externas)
+
+## Resultado
+
+Sistema em produção no laboratório. Métricas coletadas automaticamente
+permitem calcular o tempo economizado vs. processo manual por categoria
+de tarefa.
+
+---
+
+> Repositório privado — código disponível mediante solicitação.
+> Desenvolvido por Pedro Augusto Gonçalves Leite · Grupo Odilon Santos · 2026
+> 
