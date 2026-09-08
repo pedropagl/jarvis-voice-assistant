@@ -1,0 +1,2579 @@
+[
+  {
+    "perguntas": [
+      "quem e voce",
+      "quem é você",
+      "o que voce faz",
+      "o que você é"
+    ],
+    "resposta": "Sou a JARVIS, a assistente do laboratório de impressão 3D. Ajudo com o status das máquinas, peças, tickets e produção."
+  },
+  {
+    "perguntas": [
+      "quem te criou",
+      "quem criou voce",
+      "quem fez voce",
+      "quem programou voce"
+    ],
+    "resposta": "Fui desenvolvida internamente pela equipe do Grupo Odilon Santos para apoiar o laboratório de impressão 3D."
+  },
+  {
+    "perguntas": [
+      "o que e o catos",
+      "o que e catos"
+    ],
+    "resposta": "Catos é o sistema de produção do laboratório, de onde eu leio os dados reais das máquinas, tickets e peças."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "quanto e pi",
+      "valor de pi",
+      "o que e o numero pi"
+    ],
+    "resposta": "Pi é aproximadamente 3,1416. É a razão entre o perímetro de um círculo e o seu diâmetro."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "formula de bhaskara",
+      "qual e a formula de bhaskara"
+    ],
+    "resposta": "A fórmula de Bhaskara é x igual a menos b, mais ou menos raiz de b ao quadrado menos 4 a c, tudo dividido por 2 a. Ela resolve equações do segundo grau."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "quantos graus tem um triangulo",
+      "soma dos angulos internos de um triangulo"
+    ],
+    "resposta": "A soma dos ângulos internos de qualquer triângulo é 180 graus."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "quantos graus tem um circulo",
+      "quantos graus tem uma circunferencia"
+    ],
+    "resposta": "Uma circunferência completa tem 360 graus."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "teorema de pitagoras",
+      "qual e o teorema de pitagoras"
+    ],
+    "resposta": "O teorema de Pitágoras diz que, num triângulo retângulo, o quadrado da hipotenusa é igual à soma dos quadrados dos catetos: a ao quadrado igual b ao quadrado mais c ao quadrado."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e um numero primo",
+      "o que e numero primo"
+    ],
+    "resposta": "Número primo é aquele que só pode ser dividido exatamente por 1 e por ele mesmo, como 2, 3, 5, 7, 11 e 13."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quando o brasil foi descoberto",
+      "quando foi o descobrimento do brasil",
+      "quando o brasil foi colonizado"
+    ],
+    "resposta": "O Brasil foi alcançado pelos portugueses em 22 de abril de 1500, liderados por Pedro Álvares Cabral."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quando foi a independencia do brasil",
+      "que dia e a independencia do brasil"
+    ],
+    "resposta": "A independência do Brasil foi proclamada em 7 de setembro de 1822, por Dom Pedro Primeiro."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quando foi abolida a escravidao no brasil",
+      "quando foi a abolicao da escravatura",
+      "lei aurea"
+    ],
+    "resposta": "A abolição da escravidão no Brasil aconteceu em 13 de maio de 1888, com a assinatura da Lei Áurea pela Princesa Isabel."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quando o brasil se tornou republica",
+      "proclamacao da republica"
+    ],
+    "resposta": "O Brasil se tornou república em 15 de novembro de 1889, após a derrubada de Dom Pedro Segundo."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quem foi getulio vargas",
+      "o que getulio vargas fez"
+    ],
+    "resposta": "Getúlio Vargas foi presidente do Brasil em dois períodos, de 1930 a 1945 e de 1951 a 1954, e criou leis trabalhistas importantes como a CLT."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quando foi a ditadura militar no brasil",
+      "quanto tempo durou a ditadura militar"
+    ],
+    "resposta": "A ditadura militar no Brasil durou de 1964 a 1985, um período de 21 anos sem eleições diretas para presidente."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quando foi promulgada a constituicao atual",
+      "constituicao de 1988"
+    ],
+    "resposta": "A Constituição atual do Brasil foi promulgada em 5 de outubro de 1988, conhecida como Constituição Cidadã."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "quando foi a segunda guerra mundial",
+      "quando comecou e acabou a segunda guerra"
+    ],
+    "resposta": "A Segunda Guerra Mundial aconteceu de 1939 a 1945, envolvendo os Aliados e as potências do Eixo."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "quando foi a primeira guerra mundial"
+    ],
+    "resposta": "A Primeira Guerra Mundial aconteceu de 1914 a 1918."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "quando caiu o muro de berlim",
+      "queda do muro de berlim"
+    ],
+    "resposta": "O Muro de Berlim caiu em 9 de novembro de 1989, marcando o fim da divisão entre Alemanha Oriental e Ocidental."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "quando acabou a uniao sovietica",
+      "fim da uniao sovietica"
+    ],
+    "resposta": "A União Soviética deixou de existir em 25 de dezembro de 1991, dando origem à Rússia e a outras repúblicas independentes."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "quando foi a revolucao francesa"
+    ],
+    "resposta": "A Revolução Francesa começou em 1789 e é um marco do fim do Antigo Regime na Europa."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e a onu",
+      "para que serve a onu"
+    ],
+    "resposta": "A ONU, Organização das Nações Unidas, foi criada em 1945 para promover a paz, a cooperação e o diálogo entre os países."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e a otan",
+      "para que serve a otan"
+    ],
+    "resposta": "A OTAN é uma aliança militar entre países da Europa e América do Norte, criada em 1949 para defesa mútua."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e o mercosul",
+      "para que serve o mercosul"
+    ],
+    "resposta": "O Mercosul é um bloco econômico da América do Sul formado por Brasil, Argentina, Uruguai e Paraguai, criado em 1991 para facilitar o comércio entre os países membros."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e a uniao europeia",
+      "para que serve a uniao europeia"
+    ],
+    "resposta": "A União Europeia é um bloco político e econômico de países europeus, criado para integrar suas economias e políticas."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "quais sao os membros permanentes do conselho de seguranca da onu"
+    ],
+    "resposta": "Os membros permanentes do Conselho de Segurança da ONU são Estados Unidos, Rússia, China, França e Reino Unido."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e o brics",
+      "quem faz parte do brics"
+    ],
+    "resposta": "O BRICS é um grupo de economias emergentes formado originalmente por Brasil, Rússia, Índia, China e África do Sul."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e uma equacao de primeiro grau"
+    ],
+    "resposta": "Equação de primeiro grau é uma equação em que a incógnita aparece com expoente 1, na forma a x mais b igual a zero."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e uma funcao"
+    ],
+    "resposta": "Função é uma relação matemática em que cada valor de entrada corresponde a exatamente um valor de saída."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e um numero racional"
+    ],
+    "resposta": "Número racional é todo número que pode ser escrito como fração de dois inteiros, como 1/2 ou 3/4."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e um numero irracional"
+    ],
+    "resposta": "Número irracional é aquele que não pode ser escrito como fração exata, como pi ou a raiz de 2."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e area de um circulo",
+      "formula da area do circulo"
+    ],
+    "resposta": "A área do círculo é pi vezes o raio ao quadrado."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e o perimetro de um circulo",
+      "formula do perimetro do circulo"
+    ],
+    "resposta": "O perímetro de um círculo é 2 vezes pi vezes o raio."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "formula da area de um triangulo"
+    ],
+    "resposta": "A área de um triângulo é base vezes altura, dividido por 2."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "formula da area de um quadrado"
+    ],
+    "resposta": "A área de um quadrado é o lado ao quadrado."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "formula da area de um retangulo"
+    ],
+    "resposta": "A área de um retângulo é base vezes altura."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e porcentagem"
+    ],
+    "resposta": "Porcentagem é uma razão em que o denominador é 100, representando uma parte de um total."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e media aritmetica"
+    ],
+    "resposta": "Média aritmética é a soma de todos os valores dividida pela quantidade de valores."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e um numero fatorial",
+      "o que e fatorial"
+    ],
+    "resposta": "Fatorial de um número é o produto dele por todos os inteiros positivos menores que ele, representado pelo símbolo de exclamação."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "quanto e a raiz quadrada de cem"
+    ],
+    "resposta": "A raiz quadrada de 100 é 10."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "quanto e a raiz quadrada de dois"
+    ],
+    "resposta": "A raiz quadrada de 2 é aproximadamente 1,41."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e logaritmo"
+    ],
+    "resposta": "Logaritmo é a operação que indica o expoente ao qual uma base deve ser elevada para se obter determinado número."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e um angulo reto"
+    ],
+    "resposta": "Ângulo reto é aquele que mede exatamente 90 graus."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e um angulo obtuso"
+    ],
+    "resposta": "Ângulo obtuso é aquele que mede mais de 90 e menos de 180 graus."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e um angulo agudo"
+    ],
+    "resposta": "Ângulo agudo é aquele que mede menos de 90 graus."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "quantos lados tem um hexagono"
+    ],
+    "resposta": "Um hexágono tem 6 lados."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "quantos lados tem um pentagono"
+    ],
+    "resposta": "Um pentágono tem 5 lados."
+  },
+  {
+    "categoria": "matematica",
+    "perguntas": [
+      "o que e o numero de euler"
+    ],
+    "resposta": "O número de Euler, representado por e, vale aproximadamente 2,718 e aparece em crescimento exponencial e logaritmos naturais."
+  },
+  {
+    "categoria": "ciencias",
+    "perguntas": [
+      "qual e a velocidade da luz"
+    ],
+    "resposta": "A velocidade da luz no vácuo é de aproximadamente 300 mil quilômetros por segundo."
+  },
+  {
+    "categoria": "ciencias",
+    "perguntas": [
+      "quem descobriu a gravidade",
+      "lei da gravitacao universal"
+    ],
+    "resposta": "Isaac Newton formulou a lei da gravitação universal no século 17, descrevendo como os corpos se atraem."
+  },
+  {
+    "categoria": "ciencias",
+    "perguntas": [
+      "quem foi albert einstein"
+    ],
+    "resposta": "Albert Einstein foi um físico alemão que criou a teoria da relatividade e ganhou o Nobel de Física em 1921."
+  },
+  {
+    "categoria": "ciencias",
+    "perguntas": [
+      "o que e a teoria da relatividade"
+    ],
+    "resposta": "A teoria da relatividade, de Einstein, descreve como espaço, tempo e gravidade se relacionam, incluindo a famosa equação E igual a m c ao quadrado."
+  },
+  {
+    "categoria": "ciencias",
+    "perguntas": [
+      "quantos elementos tem a tabela periodica"
+    ],
+    "resposta": "A tabela periódica tem 118 elementos químicos confirmados."
+  },
+  {
+    "categoria": "ciencias",
+    "perguntas": [
+      "qual e o simbolo do oxigenio"
+    ],
+    "resposta": "O símbolo químico do oxigênio é O."
+  },
+  {
+    "categoria": "ciencias",
+    "perguntas": [
+      "qual e o simbolo da agua",
+      "formula quimica da agua"
+    ],
+    "resposta": "A fórmula química da água é H2O: dois átomos de hidrogênio e um de oxigênio."
+  },
+  {
+    "categoria": "ciencias",
+    "perguntas": [
+      "o que e dna"
+    ],
+    "resposta": "DNA é a molécula que guarda as informações genéticas dos seres vivos."
+  },
+  {
+    "categoria": "ciencias",
+    "perguntas": [
+      "quem criou a teoria da evolucao"
+    ],
+    "resposta": "Charles Darwin propôs a teoria da evolução das espécies por seleção natural, publicada em 1859."
+  },
+  {
+    "categoria": "ciencias",
+    "perguntas": [
+      "quantos ossos tem o corpo humano"
+    ],
+    "resposta": "O corpo humano adulto tem 206 ossos."
+  },
+  {
+    "categoria": "astronomia",
+    "perguntas": [
+      "quantos planetas tem o sistema solar"
+    ],
+    "resposta": "O sistema solar tem 8 planetas: Mercúrio, Vênus, Terra, Marte, Júpiter, Saturno, Urano e Netuno."
+  },
+  {
+    "categoria": "astronomia",
+    "perguntas": [
+      "qual e o maior planeta do sistema solar"
+    ],
+    "resposta": "Júpiter é o maior planeta do sistema solar."
+  },
+  {
+    "categoria": "astronomia",
+    "perguntas": [
+      "qual e o menor planeta do sistema solar"
+    ],
+    "resposta": "Mercúrio é o menor planeta do sistema solar."
+  },
+  {
+    "categoria": "astronomia",
+    "perguntas": [
+      "qual e o planeta mais proximo do sol"
+    ],
+    "resposta": "Mercúrio é o planeta mais próximo do Sol."
+  },
+  {
+    "categoria": "astronomia",
+    "perguntas": [
+      "quanto tempo a terra leva para dar uma volta no sol"
+    ],
+    "resposta": "A Terra leva aproximadamente 365 dias e um quarto para dar uma volta completa ao redor do Sol."
+  },
+  {
+    "categoria": "astronomia",
+    "perguntas": [
+      "o que e um buraco negro"
+    ],
+    "resposta": "Buraco negro é uma região do espaço com gravidade tão forte que nem a luz consegue escapar dela."
+  },
+  {
+    "categoria": "astronomia",
+    "perguntas": [
+      "quem foi o primeiro homem a ir a lua"
+    ],
+    "resposta": "Neil Armstrong foi o primeiro homem a pisar na Lua, em 20 de julho de 1969, na missão Apollo 11."
+  },
+  {
+    "categoria": "astronomia",
+    "perguntas": [
+      "o que e a via lactea"
+    ],
+    "resposta": "Via Láctea é o nome da galáxia onde está o nosso sistema solar."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "quantos continentes existem"
+    ],
+    "resposta": "Existem 6 continentes: África, América, Antártida, Ásia, Europa e Oceania."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e o maior pais do mundo"
+    ],
+    "resposta": "A Rússia é o maior país do mundo em área territorial."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e o maior pais da america do sul"
+    ],
+    "resposta": "O Brasil é o maior país da América do Sul."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e o maior oceano do mundo"
+    ],
+    "resposta": "O Oceano Pacífico é o maior e mais profundo oceano do mundo."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e o maior rio do mundo"
+    ],
+    "resposta": "O Rio Amazonas é considerado o maior rio do mundo em volume de água."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a maior floresta do mundo"
+    ],
+    "resposta": "A Floresta Amazônica é a maior floresta tropical do mundo."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e o deserto mais quente do mundo"
+    ],
+    "resposta": "O Deserto do Saara, na África, é o maior deserto quente do mundo."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a montanha mais alta do mundo"
+    ],
+    "resposta": "O Monte Everest, no Himalaia, é a montanha mais alta do mundo, com cerca de 8.849 metros."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a capital do brasil"
+    ],
+    "resposta": "A capital do Brasil é Brasília."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a capital da franca"
+    ],
+    "resposta": "A capital da França é Paris."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a capital dos estados unidos"
+    ],
+    "resposta": "A capital dos Estados Unidos é Washington."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a capital da inglaterra",
+      "qual e a capital do reino unido"
+    ],
+    "resposta": "A capital do Reino Unido é Londres."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a capital da alemanha"
+    ],
+    "resposta": "A capital da Alemanha é Berlim."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a capital da italia"
+    ],
+    "resposta": "A capital da Itália é Roma."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a capital da china"
+    ],
+    "resposta": "A capital da China é Pequim."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a capital do japao"
+    ],
+    "resposta": "A capital do Japão é Tóquio."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a capital da russia"
+    ],
+    "resposta": "A capital da Rússia é Moscou."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "qual e a capital da argentina"
+    ],
+    "resposta": "A capital da Argentina é Buenos Aires."
+  },
+  {
+    "categoria": "geografia",
+    "perguntas": [
+      "quantos estados tem o brasil"
+    ],
+    "resposta": "O Brasil tem 26 estados e mais o Distrito Federal, totalizando 27 unidades federativas."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quem foi dom pedro segundo"
+    ],
+    "resposta": "Dom Pedro Segundo foi o segundo e último imperador do Brasil, governando de 1840 até a Proclamação da República em 1889."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quem foi tiradentes"
+    ],
+    "resposta": "Tiradentes foi o principal líder da Inconfidência Mineira, movimento contra o domínio português, e foi executado em 1792."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "o que foi a inconfidencia mineira"
+    ],
+    "resposta": "A Inconfidência Mineira foi um movimento separatista de 1789 em Minas Gerais contra o domínio de Portugal."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quem foi o primeiro presidente do brasil"
+    ],
+    "resposta": "Deodoro da Fonseca foi o primeiro presidente do Brasil, em 1889, após a Proclamação da República."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quem foi juscelino kubitschek"
+    ],
+    "resposta": "Juscelino Kubitschek foi presidente do Brasil de 1956 a 1961 e é conhecido por construir Brasília."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quando brasilia foi inaugurada"
+    ],
+    "resposta": "Brasília foi inaugurada como capital do Brasil em 21 de abril de 1960."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quem foi o primeiro presidente eleito depois da ditadura"
+    ],
+    "resposta": "Fernando Collor foi o primeiro presidente eleito por voto direto após a ditadura militar, tomando posse em 1990."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "o que foi o plano real"
+    ],
+    "resposta": "O Plano Real foi o programa econômico de 1994 que criou a moeda Real e controlou a hiperinflação no Brasil."
+  },
+  {
+    "categoria": "historia_brasil",
+    "perguntas": [
+      "quem foi jose sarney"
+    ],
+    "resposta": "José Sarney foi o primeiro presidente civil do Brasil após a ditadura militar, governando de 1985 a 1990."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "o que foi o iluminismo"
+    ],
+    "resposta": "Iluminismo foi um movimento filosófico do século 18 na Europa que defendia a razão, a ciência e os direitos individuais."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "o que foi a revolucao industrial"
+    ],
+    "resposta": "A Revolução Industrial começou na Inglaterra no século 18 e transformou a produção artesanal em produção mecanizada em fábricas."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "o que foi a guerra fria"
+    ],
+    "resposta": "A Guerra Fria foi a disputa política e ideológica entre Estados Unidos e União Soviética, de 1947 a 1991, sem confronto militar direto entre as duas potências."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "quem foi hitler",
+      "quem foi adolf hitler"
+    ],
+    "resposta": "Adolf Hitler foi o ditador da Alemanha nazista de 1933 a 1945, responsável pelo Holocausto e por iniciar a Segunda Guerra Mundial na Europa."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "o que foi o holocausto"
+    ],
+    "resposta": "O Holocausto foi o extermínio sistemático de cerca de 6 milhões de judeus e outras minorias pela Alemanha nazista durante a Segunda Guerra Mundial."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "quem foi napoleao bonaparte"
+    ],
+    "resposta": "Napoleão Bonaparte foi um general e imperador francês que dominou boa parte da Europa no início do século 19."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "o que foi o egito antigo conhecido por"
+    ],
+    "resposta": "O Egito Antigo é conhecido pelas pirâmides, pelos faraós e por ser uma das primeiras grandes civilizações da história, às margens do Rio Nilo."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "o que foi o imperio romano"
+    ],
+    "resposta": "O Império Romano foi uma das maiores civilizações da história antiga, controlando boa parte da Europa, norte da África e Oriente Médio."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "quando o imperio romano caiu"
+    ],
+    "resposta": "O Império Romano do Ocidente caiu em 476 depois de Cristo."
+  },
+  {
+    "categoria": "historia_mundial",
+    "perguntas": [
+      "o que foi a guerra do vietna"
+    ],
+    "resposta": "A Guerra do Vietnã foi um conflito entre 1955 e 1975 que envolveu o Vietnã do Norte, apoiado pela União Soviética e China, contra o Vietnã do Sul, apoiado pelos Estados Unidos."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e a otan e quem faz parte",
+      "quais paises fazem parte da otan"
+    ],
+    "resposta": "A OTAN é formada principalmente por países da Europa e América do Norte, incluindo Estados Unidos, Reino Unido, Alemanha, França e Canadá."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e o g7"
+    ],
+    "resposta": "O G7 é um grupo formado pelas sete maiores economias desenvolvidas do mundo: Estados Unidos, Japão, Alemanha, Reino Unido, França, Itália e Canadá."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e o g20"
+    ],
+    "resposta": "O G20 é um grupo formado pelas 19 maiores economias do mundo mais a União Europeia, para discutir política econômica global."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e uma democracia"
+    ],
+    "resposta": "Democracia é um sistema de governo em que o poder vem do povo, geralmente exercido por meio do voto e de representantes eleitos."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e uma monarquia"
+    ],
+    "resposta": "Monarquia é um sistema de governo em que o poder é exercido por um rei ou rainha, podendo ser absoluta ou constitucional."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "o que e um pais em desenvolvimento"
+    ],
+    "resposta": "País em desenvolvimento é aquele que ainda está construindo sua estrutura econômica e social, geralmente com renda per capita menor que a de países desenvolvidos."
+  },
+  {
+    "categoria": "geopolitica",
+    "perguntas": [
+      "quantos paises tem o mundo"
+    ],
+    "resposta": "Existem cerca de 195 países reconhecidos internacionalmente no mundo."
+  },
+  {
+    "categoria": "robotica",
+    "perguntas": [
+      "o que e robotica"
+    ],
+    "resposta": "Robótica é a área que projeta, constrói e programa robôs, unindo mecânica, eletrônica e software."
+  },
+  {
+    "categoria": "robotica",
+    "perguntas": [
+      "o que e um atuador"
+    ],
+    "resposta": "Atuador é o componente de um robô que transforma energia (elétrica, hidráulica ou pneumática) em movimento, como motores e servos."
+  },
+  {
+    "categoria": "robotica",
+    "perguntas": [
+      "o que e um sensor em robotica"
+    ],
+    "resposta": "Sensor é o componente que permite ao robô perceber o ambiente, medindo grandezas como distância, temperatura, luz ou posição."
+  },
+  {
+    "categoria": "robotica",
+    "perguntas": [
+      "o que e um servo motor",
+      "para que serve um servo motor"
+    ],
+    "resposta": "Servo motor é um motor que permite controlar precisamente a posição angular do eixo, muito usado em robótica e automação."
+  },
+  {
+    "categoria": "robotica",
+    "perguntas": [
+      "o que e um braco robotico"
+    ],
+    "resposta": "Braço robótico é um manipulador mecânico com juntas articuladas, usado para replicar movimentos humanos em tarefas de montagem, solda ou manuseio de peças."
+  },
+  {
+    "categoria": "robotica",
+    "perguntas": [
+      "o que e automacao industrial"
+    ],
+    "resposta": "Automação industrial é o uso de máquinas, robôs e sistemas de controle para executar tarefas de produção sem intervenção humana constante."
+  },
+  {
+    "categoria": "robotica",
+    "perguntas": [
+      "quantos graus de liberdade tem um robo"
+    ],
+    "resposta": "Graus de liberdade é o número de movimentos independentes que um robô pode fazer; um braço robótico industrial típico tem de 4 a 6 graus de liberdade."
+  },
+  {
+    "categoria": "robotica",
+    "perguntas": [
+      "o que e um cobot",
+      "o que e robo colaborativo"
+    ],
+    "resposta": "Cobot, ou robô colaborativo, é um robô projetado para trabalhar em conjunto com pessoas no mesmo espaço, com sensores de segurança para evitar acidentes."
+  },
+  {
+    "categoria": "ia",
+    "perguntas": [
+      "o que e inteligencia artificial"
+    ],
+    "resposta": "Inteligência artificial é a área da computação que cria sistemas capazes de realizar tarefas que normalmente exigiriam raciocínio humano, como reconhecer padrões e tomar decisões."
+  },
+  {
+    "categoria": "ia",
+    "perguntas": [
+      "o que e machine learning",
+      "o que e aprendizado de maquina"
+    ],
+    "resposta": "Machine learning é um ramo da inteligência artificial em que o sistema aprende padrões a partir de dados, em vez de seguir regras programadas manualmente."
+  },
+  {
+    "categoria": "ia",
+    "perguntas": [
+      "o que e uma rede neural"
+    ],
+    "resposta": "Rede neural é um modelo de inteligência artificial inspirado no funcionamento do cérebro, formado por camadas de nós conectados que processam informação."
+  },
+  {
+    "categoria": "ia",
+    "perguntas": [
+      "o que e deep learning",
+      "o que e aprendizado profundo"
+    ],
+    "resposta": "Deep learning é uma técnica de machine learning que usa redes neurais com muitas camadas para aprender padrões complexos, como em reconhecimento de imagem e voz."
+  },
+  {
+    "categoria": "ia",
+    "perguntas": [
+      "o que e visao computacional"
+    ],
+    "resposta": "Visão computacional é a área da inteligência artificial que permite a máquinas interpretar imagens e vídeos, usada por exemplo para inspecionar peças automaticamente."
+  },
+  {
+    "categoria": "ia",
+    "perguntas": [
+      "o que e um llm",
+      "o que e um modelo de linguagem"
+    ],
+    "resposta": "LLM, ou modelo de linguagem grande, é um tipo de inteligência artificial treinado com muito texto para entender e gerar linguagem natural, como o modelo usado pela própria JARVIS."
+  },
+  {
+    "categoria": "ia",
+    "perguntas": [
+      "o que e um chatbot"
+    ],
+    "resposta": "Chatbot é um programa que conversa com pessoas por texto ou voz, respondendo perguntas ou executando tarefas automaticamente."
+  },
+  {
+    "categoria": "ia",
+    "perguntas": [
+      "o que e manutencao preditiva"
+    ],
+    "resposta": "Manutenção preditiva é o uso de dados e inteligência artificial para prever falhas em máquinas antes que elas aconteçam, evitando paradas inesperadas."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e manufatura aditiva"
+    ],
+    "resposta": "Manufatura aditiva é o nome técnico da impressão 3D: construir uma peça adicionando material camada por camada, ao contrário da usinagem que remove material."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e fdm",
+      "o que e impressao fdm"
+    ],
+    "resposta": "FDM, ou modelagem por fusão e depósito, é a tecnologia de impressão 3D que derrete um filamento de plástico e o deposita camada por camada."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e sla",
+      "o que e impressao sla"
+    ],
+    "resposta": "SLA, ou estereolitografia, é uma tecnologia de impressão 3D que usa um laser para curar resina líquida camada por camada, gerando peças de alta precisão."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e sls",
+      "o que e impressao sls"
+    ],
+    "resposta": "SLS, ou sinterização seletiva a laser, é uma tecnologia de impressão 3D que usa laser para fundir pó de material (plástico ou metal) camada por camada."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e um slicer",
+      "para que serve um slicer"
+    ],
+    "resposta": "Slicer é o software que converte um modelo 3D em camadas e gera o código G, com as instruções que a impressora 3D vai seguir para imprimir."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e codigo g",
+      "o que e g-code"
+    ],
+    "resposta": "Código G, ou G-code, é a linguagem de instruções que controla os movimentos e a extrusão de uma impressora 3D ou máquina CNC."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e infill",
+      "o que e preenchimento na impressao 3d"
+    ],
+    "resposta": "Infill é o preenchimento interno de uma peça impressa em 3D; controla a densidade e resistência da peça sem gastar material extra em uma peça totalmente sólida."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e suporte na impressao 3d",
+      "para que serve suporte na impressao 3d"
+    ],
+    "resposta": "Suporte é uma estrutura auxiliar impressa para sustentar partes da peça que ficariam suspensas no ar, sendo removida depois da impressão."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "quais materiais mais usados na impressao 3d"
+    ],
+    "resposta": "Os materiais mais comuns em impressão 3D FDM são PLA, ABS, PETG e nylon, cada um com diferentes níveis de resistência, flexibilidade e temperatura de uso."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e pla"
+    ],
+    "resposta": "PLA é um plástico biodegradável derivado de milho ou cana-de-açúcar, muito usado em impressão 3D por ser fácil de imprimir e ter boa qualidade visual."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e abs"
+    ],
+    "resposta": "ABS é um plástico resistente e mais tolerante ao calor que o PLA, usado em impressão 3D para peças que precisam de mais durabilidade mecânica."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e petg"
+    ],
+    "resposta": "PETG é um plástico que combina a facilidade de impressão do PLA com mais resistência e flexibilidade, sendo resistente à umidade."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e um extrusor de impressora 3d"
+    ],
+    "resposta": "Extrusor é a parte da impressora 3D que puxa o filamento, o derrete e o empurra através do bico para formar cada camada da peça."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e a mesa de impressao",
+      "o que e a build plate"
+    ],
+    "resposta": "Mesa de impressão, ou build plate, é a superfície onde a peça é construída camada por camada; sua nivelação e aderência são essenciais para uma boa impressão."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e warping na impressao 3d"
+    ],
+    "resposta": "Warping é o empenamento da peça durante a impressão 3D, geralmente causado por resfriamento desigual do material, comum em ABS."
+  },
+  {
+    "categoria": "manufatura_aditiva",
+    "perguntas": [
+      "o que e resina de impressao 3d"
+    ],
+    "resposta": "Resina é o material líquido fotossensível usado em impressoras 3D de resina (SLA/DLP), que endurece quando exposto à luz ultravioleta."
+  },
+  {
+    "categoria": "aeronave",
+    "perguntas": [
+      "o que faz um aviao voar",
+      "como um aviao voa"
+    ],
+    "resposta": "Um avião voa graças à sustentação gerada pelo formato das asas, que faz o ar passar mais rápido por cima e criar uma diferença de pressão que empurra a aeronave para cima."
+  },
+  {
+    "categoria": "aeronave",
+    "perguntas": [
+      "o que e sustentacao na aviacao"
+    ],
+    "resposta": "Sustentação é a força aerodinâmica que empurra a aeronave para cima, gerada principalmente pelo formato das asas em movimento no ar."
+  },
+  {
+    "categoria": "aeronave",
+    "perguntas": [
+      "o que e arrasto na aviacao"
+    ],
+    "resposta": "Arrasto é a força que se opõe ao movimento de uma aeronave no ar, causada pelo atrito e pela resistência do ar."
+  },
+  {
+    "categoria": "aeronave",
+    "perguntas": [
+      "quem inventou o aviao"
+    ],
+    "resposta": "Os irmãos Wright são reconhecidos por realizar o primeiro voo motorizado controlado, em 1903, nos Estados Unidos; no Brasil, Santos Dumont é celebrado pelo voo do 14-Bis em 1906."
+  },
+  {
+    "categoria": "aeronave",
+    "perguntas": [
+      "quem foi santos dumont"
+    ],
+    "resposta": "Santos Dumont foi um inventor brasileiro considerado o pai da aviação por muitos, famoso pelo voo do 14-Bis em Paris, em 1906."
+  },
+  {
+    "categoria": "aeronave",
+    "perguntas": [
+      "o que e um drone"
+    ],
+    "resposta": "Drone é uma aeronave não tripulada, controlada remotamente ou de forma autônoma, usada para fotografia, inspeção industrial, entrega e outras aplicações."
+  },
+  {
+    "categoria": "aeronave",
+    "perguntas": [
+      "para que serve impressao 3d na aviacao",
+      "impressao 3d e aeronaves"
+    ],
+    "resposta": "A impressão 3D é usada na aviação para fabricar peças leves e complexas, como suportes, dutos e componentes de interior, reduzindo peso e tempo de produção."
+  },
+  {
+    "categoria": "aeronave",
+    "perguntas": [
+      "o que e um turbofan",
+      "o que e um motor a jato"
+    ],
+    "resposta": "Turbofan é o tipo de motor a jato mais usado em aviões comerciais, que combina um grande ventilador frontal com uma turbina a gás para gerar empuxo."
+  },
+  {
+    "categoria": "carros_antigos",
+    "perguntas": [
+      "o que e uma peca automotiva descontinuada",
+      "o que e uma peca fora de linha"
+    ],
+    "resposta": "Peça automotiva descontinuada, ou fora de linha, é aquela que o fabricante original parou de produzir, geralmente de carros antigos, sendo difícil de encontrar no mercado."
+  },
+  {
+    "categoria": "carros_antigos",
+    "perguntas": [
+      "como conseguir pecas de carros antigos",
+      "onde achar peca de carro antigo"
+    ],
+    "resposta": "Peças de carros antigos costumam ser encontradas em desmanches, encontros de colecionadores, ou recriadas por engenharia reversa e impressão 3D quando não existem mais no mercado."
+  },
+  {
+    "categoria": "carros_antigos",
+    "perguntas": [
+      "o que e engenharia reversa de pecas"
+    ],
+    "resposta": "Engenharia reversa de peças é o processo de escanear ou medir uma peça original para recriar seu modelo digital, permitindo fabricá-la de novo por impressão 3D ou usinagem."
+  },
+  {
+    "categoria": "carros_antigos",
+    "perguntas": [
+      "para que serve impressao 3d para carros antigos",
+      "impressao 3d em restauracao de carros"
+    ],
+    "resposta": "A impressão 3D permite recriar peças de carros antigos que não são mais fabricadas, como acabamentos, suportes e maçanetas, a partir de um modelo digitalizado ou desenhado."
+  },
+  {
+    "categoria": "carros_antigos",
+    "perguntas": [
+      "o que e um carro custom",
+      "o que e customizacao automotiva"
+    ],
+    "resposta": "Carro custom é um veículo modificado com peças, acabamentos ou mecânica personalizados, muitas vezes únicos, fora do padrão de fábrica."
+  },
+  {
+    "categoria": "carros_antigos",
+    "perguntas": [
+      "o que e escaneamento 3d de peca",
+      "o que e scanner 3d"
+    ],
+    "resposta": "Escaneamento 3D é a técnica de capturar a forma exata de um objeto físico com um scanner a laser ou luz estruturada, gerando um modelo digital pronto para reproduzir ou modificar."
+  },
+  {
+    "categoria": "carros_antigos",
+    "perguntas": [
+      "o que e prototipagem rapida"
+    ],
+    "resposta": "Prototipagem rápida é o uso de tecnologias como a impressão 3D para criar rapidamente um modelo físico de uma peça ou produto, antes da fabricação final."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "qual e o maior animal do mundo"
+    ],
+    "resposta": "A baleia-azul é o maior animal do mundo, podendo chegar a 30 metros de comprimento."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "qual e o animal terrestre mais rapido"
+    ],
+    "resposta": "A chita é o animal terrestre mais rápido, podendo atingir mais de 100 quilômetros por hora."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "qual e o maior animal terrestre"
+    ],
+    "resposta": "O elefante africano é o maior animal terrestre da atualidade."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "quanto tempo vive uma tartaruga"
+    ],
+    "resposta": "Algumas espécies de tartaruga podem viver mais de 100 anos."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "o que os pandas comem"
+    ],
+    "resposta": "Pandas gigantes se alimentam principalmente de bambu, quase 12 horas por dia."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "qual e o unico mamifero que voa"
+    ],
+    "resposta": "O morcego é o único mamífero capaz de voar de verdade, e não apenas planar."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "quantos coracoes tem um polvo"
+    ],
+    "resposta": "O polvo tem 3 corações: dois bombeiam sangue para as brânquias e um para o resto do corpo."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "qual animal tem a maior memoria"
+    ],
+    "resposta": "Elefantes são famosos por sua excelente memória, conseguindo lembrar de rotas e outros indivíduos por décadas."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "quantos anos vive um cachorro"
+    ],
+    "resposta": "A maioria dos cães vive entre 10 e 13 anos, dependendo da raça e do porte."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "qual e a ave mais rapida do mundo"
+    ],
+    "resposta": "O falcão-peregrino é a ave mais rápida do mundo, podendo passar de 300 quilômetros por hora em mergulho."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "quantos ossos tem uma girafa no pescoco"
+    ],
+    "resposta": "A girafa tem 7 vértebras no pescoço, o mesmo número que os humanos, só que bem mais longas."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "qual e o animal mais venenoso do mundo"
+    ],
+    "resposta": "A água-viva-caixa é considerada um dos animais mais venenosos do mundo."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "qual e o maior peixe do mundo"
+    ],
+    "resposta": "O tubarão-baleia é o maior peixe do mundo, podendo passar de 12 metros de comprimento."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "as abelhas sao importantes por que",
+      "por que as abelhas sao importantes"
+    ],
+    "resposta": "As abelhas são essenciais porque polinizam grande parte das plantas que produzem os alimentos que consumimos."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "quanto tempo uma formiga vive"
+    ],
+    "resposta": "Formigas operárias vivem em média algumas semanas a poucos meses, mas rainhas podem viver muitos anos."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "qual e o animal mais forte do mundo em relacao ao peso"
+    ],
+    "resposta": "O besouro-rola-bosta é considerado um dos animais mais fortes proporcionalmente ao próprio peso."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "o que e um animal onivoro"
+    ],
+    "resposta": "Animal onívoro é aquele que se alimenta tanto de plantas quanto de outros animais."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "o que e um animal herbivoro"
+    ],
+    "resposta": "Animal herbívoro é aquele que se alimenta exclusivamente de plantas."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "o que e um animal carnivoro"
+    ],
+    "resposta": "Animal carnívoro é aquele que se alimenta principalmente de carne de outros animais."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "qual e o animal simbolo do brasil"
+    ],
+    "resposta": "A arara-azul e o tucano são frequentemente associados como símbolos da fauna brasileira."
+  },
+  {
+    "categoria": "corpo_humano",
+    "perguntas": [
+      "quantos litros de sangue tem uma pessoa"
+    ],
+    "resposta": "Um adulto tem em média de 4,5 a 5,5 litros de sangue no corpo."
+  },
+  {
+    "categoria": "corpo_humano",
+    "perguntas": [
+      "qual e o maior orgao do corpo humano"
+    ],
+    "resposta": "A pele é o maior órgão do corpo humano."
+  },
+  {
+    "categoria": "corpo_humano",
+    "perguntas": [
+      "quantos musculos tem o corpo humano"
+    ],
+    "resposta": "O corpo humano tem mais de 600 músculos."
+  },
+  {
+    "categoria": "corpo_humano",
+    "perguntas": [
+      "quantas vezes o coracao bate por minuto"
+    ],
+    "resposta": "O coração humano bate em média entre 60 e 100 vezes por minuto em repouso."
+  },
+  {
+    "categoria": "corpo_humano",
+    "perguntas": [
+      "quanto tempo leva para digerir uma refeicao"
+    ],
+    "resposta": "A digestão completa de uma refeição pode levar de 24 a 72 horas, dependendo do alimento."
+  },
+  {
+    "categoria": "corpo_humano",
+    "perguntas": [
+      "quantos neuronios tem o cerebro humano"
+    ],
+    "resposta": "O cérebro humano tem cerca de 86 bilhões de neurônios."
+  },
+  {
+    "categoria": "corpo_humano",
+    "perguntas": [
+      "qual e a funcao dos rins"
+    ],
+    "resposta": "Os rins filtram o sangue, removendo toxinas e excesso de líquido, que são eliminados na urina."
+  },
+  {
+    "categoria": "corpo_humano",
+    "perguntas": [
+      "qual e a funcao do figado"
+    ],
+    "resposta": "O fígado processa nutrientes, filtra toxinas do sangue e produz a bile, que ajuda na digestão de gorduras."
+  },
+  {
+    "categoria": "corpo_humano",
+    "perguntas": [
+      "quanto tempo uma pessoa pode ficar sem dormir"
+    ],
+    "resposta": "Ficar sem dormir por longos períodos é perigoso; recordes relatados chegam a cerca de 11 dias, mas isso causa danos sérios à saúde."
+  },
+  {
+    "categoria": "corpo_humano",
+    "perguntas": [
+      "quantas horas de sono um adulto precisa"
+    ],
+    "resposta": "A maioria dos adultos precisa de 7 a 9 horas de sono por noite."
+  },
+  {
+    "categoria": "saude",
+    "perguntas": [
+      "o que e uma vacina"
+    ],
+    "resposta": "Vacina é um preparado que estimula o sistema imunológico a criar defesas contra uma doença, sem causar a doença em si."
+  },
+  {
+    "categoria": "saude",
+    "perguntas": [
+      "o que e pressao alta",
+      "o que e hipertensao"
+    ],
+    "resposta": "Hipertensão, ou pressão alta, é quando a força do sangue contra as paredes das arterias fica constantemente acima do normal."
+  },
+  {
+    "categoria": "saude",
+    "perguntas": [
+      "o que e diabetes"
+    ],
+    "resposta": "Diabetes é uma doença em que o corpo não produz insulina suficiente ou não a usa corretamente, elevando o nível de açúcar no sangue."
+  },
+  {
+    "categoria": "saude",
+    "perguntas": [
+      "o que e colesterol"
+    ],
+    "resposta": "Colesterol é uma substância gordurosa presente no sangue, necessária ao corpo, mas que em excesso aumenta o risco de doenças cardíacas."
+  },
+  {
+    "categoria": "saude",
+    "perguntas": [
+      "quais os beneficios de beber agua"
+    ],
+    "resposta": "Beber água regularmente ajuda na digestão, na regulação da temperatura do corpo e no funcionamento dos rins e do cérebro."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "quais os beneficios do cafe"
+    ],
+    "resposta": "O café, com moderação, pode aumentar o estado de alerta e a concentração, além de conter antioxidantes."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "o que e uma dieta balanceada"
+    ],
+    "resposta": "Dieta balanceada é aquela que inclui proporções adequadas de carboidratos, proteínas, gorduras, vitaminas e minerais."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "o que e proteina"
+    ],
+    "resposta": "Proteína é um nutriente essencial para a construção e reparação de tecidos do corpo, encontrado em carnes, ovos, leguminosas e outros alimentos."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "o que e carboidrato"
+    ],
+    "resposta": "Carboidrato é o principal nutriente responsável por fornecer energia rápida ao corpo, encontrado em pães, arroz e massas."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "quais alimentos tem mais vitamina c"
+    ],
+    "resposta": "Frutas cítricas como laranja, limão e acerola são conhecidas por serem ricas em vitamina C."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "o que e um alimento fermentado"
+    ],
+    "resposta": "Alimento fermentado é aquele transformado por microrganismos, como iogurte, queijo, pão e chucrute."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "de onde vem o chocolate"
+    ],
+    "resposta": "O chocolate é feito a partir das semente do cacau, uma planta originária da América Central e do Sul."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "de onde vem o cafe"
+    ],
+    "resposta": "O café tem origem na Etiópia, na África, e depois se espalhou pelo mundo, sendo hoje muito cultivado no Brasil."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "qual e o pais que mais produz cafe"
+    ],
+    "resposta": "O Brasil é o maior produtor de café do mundo."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "o que e a feijoada"
+    ],
+    "resposta": "Feijoada é um prato típico brasileiro feito com feijão preto e diversas carnes, servido tradicionalmente com arroz, couve e farofa."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "o que e churrasco"
+    ],
+    "resposta": "Churrasco é uma técnica de preparo de carnes grelhadas no fogo ou brasa, muito popular no Brasil, especialmente no Rio Grande do Sul."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "quais frutas sao originarias do brasil"
+    ],
+    "resposta": "Frutas como açaí, caju, maracujá, jabuticaba e pitanga são originárias do Brasil."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "o que e comida organica"
+    ],
+    "resposta": "Comida orgânica é aquela produzida sem uso de agrotóxicos ou fertilizantes sintéticos."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "quantos litros de agua uma pessoa deve beber por dia"
+    ],
+    "resposta": "A recomendação geral é de cerca de 2 a 2,5 litros de água por dia, podendo variar conforme o peso e a atividade física."
+  },
+  {
+    "categoria": "alimentacao",
+    "perguntas": [
+      "o que e intolerancia a lactose"
+    ],
+    "resposta": "Intolerância à lactose é a dificuldade do corpo em digerir a lactose, o açúcar presente no leite, causando desconforto digestivo."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "quantos jogadores tem um time de futebol"
+    ],
+    "resposta": "Um time de futebol tem 11 jogadores em campo, incluindo o goleiro."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "quantos jogadores tem um time de volei"
+    ],
+    "resposta": "Um time de vôlei tem 6 jogadores em quadra."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "quantos jogadores tem um time de basquete"
+    ],
+    "resposta": "Um time de basquete tem 5 jogadores em quadra."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "quantas copas do mundo o brasil ganhou"
+    ],
+    "resposta": "O Brasil ganhou 5 Copas do Mundo de futebol: em 1958, 1962, 1970, 1994 e 2002."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "quem foi pele"
+    ],
+    "resposta": "Pelé foi um dos maiores jogadores de futebol da história, tricampeão mundial pela seleção brasileira."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "a cada quantos anos acontece a copa do mundo"
+    ],
+    "resposta": "A Copa do Mundo de futebol acontece a cada 4 anos."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "a cada quantos anos acontecem os jogos olimpicos"
+    ],
+    "resposta": "Os Jogos Olímpicos de verão acontecem a cada 4 anos."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "onde foram as olimpiadas de 2016"
+    ],
+    "resposta": "As Olimpíadas de 2016 foram realizadas no Rio de Janeiro, no Brasil."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "o que e a formula 1"
+    ],
+    "resposta": "Fórmula 1 é a principal categoria de automobilismo do mundo, com carros monopostos de altíssima velocidade."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "quem foi ayrton senna"
+    ],
+    "resposta": "Ayrton Senna foi um piloto brasileiro tricampeão mundial de Fórmula 1, considerado um dos maiores da história do automobilismo."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "o que e o vôlei de praia"
+    ],
+    "resposta": "Vôlei de praia é uma modalidade do vôlei jogada na areia, geralmente em duplas."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "quantos sets tem um jogo de volei"
+    ],
+    "resposta": "Um jogo de vôlei é disputado em até 5 sets, sendo vencedor quem ganhar 3."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "o que e o mma"
+    ],
+    "resposta": "MMA, ou artes marciais mistas, é um esporte de combate que combina técnicas de luta como boxe, jiu-jitsu e muay thai."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "quem foi muhammad ali"
+    ],
+    "resposta": "Muhammad Ali foi um dos maiores boxeadores da história, conhecido por sua velocidade e por vencer o título mundial dos pesos pesados."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "o que e a maratona"
+    ],
+    "resposta": "Maratona é uma corrida de longa distância com 42,195 quilômetros, inspirada na corrida do soldado grego que anunciou a vitória em Maratona."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "quantas notas musicais existem"
+    ],
+    "resposta": "Existem 7 notas musicais principais: dó, ré, mi, fá, sol, lá e si."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "quem foi beethoven"
+    ],
+    "resposta": "Ludwig van Beethoven foi um compositor alemão, um dos mais importantes da história da música clássica, mesmo tendo perdido a audição."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "quem foi mozart"
+    ],
+    "resposta": "Wolfgang Amadeus Mozart foi um compositor austríaco, considerado um dos maiores gênios da música clássica."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "o que e samba"
+    ],
+    "resposta": "Samba é um gênero musical e de dança brasileiro, com raízes africanas, símbolo do carnaval e da cultura nacional."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "o que e bossa nova"
+    ],
+    "resposta": "Bossa nova é um gênero musical brasileiro surgido no final dos anos 1950, misturando samba com influências do jazz."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "quem foi tom jobim"
+    ],
+    "resposta": "Tom Jobim foi um compositor e músico brasileiro, um dos criadores da bossa nova, autor de clássicos como Garota de Ipanema."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "o que e forro"
+    ],
+    "resposta": "Forró é um gênero musical e dança típicos do Nordeste do Brasil, tradicionalmente tocado com sanfona, zabumba e triângulo."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "quantas cordas tem um violao"
+    ],
+    "resposta": "Um violão convencional tem 6 cordas."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "quantas teclas tem um piano"
+    ],
+    "resposta": "Um piano padrão tem 88 teclas."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "o que e o jazz"
+    ],
+    "resposta": "Jazz é um gênero musical que surgiu nos Estados Unidos no início do século 20, marcado pela improvisação e por raízes afro-americanas."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "quem foram os beatles"
+    ],
+    "resposta": "Os Beatles foram uma banda britânica formada em Liverpool, uma das mais influentes da história da música pop e rock."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "o que e o rock and roll"
+    ],
+    "resposta": "Rock and roll é um gênero musical surgido nos Estados Unidos nos anos 1950, combinando blues, country e rhythm and blues."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "quem foi elvis presley"
+    ],
+    "resposta": "Elvis Presley foi um cantor americano conhecido como o Rei do Rock, um dos artistas mais influentes do século 20."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "o que e mpb"
+    ],
+    "resposta": "MPB, ou Música Popular Brasileira, é um gênero que reúne diversos estilos brasileiros surgidos principalmente a partir dos anos 1960."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "quem foi villa lobos"
+    ],
+    "resposta": "Heitor Villa-Lobos foi um dos maiores compositores brasileiros de música clássica, misturando influências eruditas e populares."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "quem pintou a mona lisa"
+    ],
+    "resposta": "A Mona Lisa foi pintada por Leonardo da Vinci, no início do século 16."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "quem foi leonardo da vinci"
+    ],
+    "resposta": "Leonardo da Vinci foi um artista, inventor e cientista italiano do Renascimento, autor de obras como a Mona Lisa e a Última Ceia."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "quem pintou a noite estrelada"
+    ],
+    "resposta": "A pintura A Noite Estrelada foi feita pelo artista holandês Vincent van Gogh, em 1889."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "quem foi vincent van gogh"
+    ],
+    "resposta": "Vincent van Gogh foi um pintor holandês, um dos artistas mais influentes da história da arte, conhecido por obras como A Noite Estrelada e Girassóis."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "quem foi pablo picasso"
+    ],
+    "resposta": "Pablo Picasso foi um pintor espanhol, cofundador do cubismo, um dos artistas mais importantes do século 20."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "o que e o cubismo"
+    ],
+    "resposta": "Cubismo é um movimento artístico do início do século 20 que representa objetos e pessoas em formas geométricas fragmentadas."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "o que e o renascimento"
+    ],
+    "resposta": "Renascimento foi um movimento cultural e artístico europeu, entre os séculos 14 e 16, marcado pelo resgate dos valores da Antiguidade Clássica."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "quem foi tarsila do amaral"
+    ],
+    "resposta": "Tarsila do Amaral foi uma das principais pintoras do modernismo brasileiro, autora da obra Abaporu."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "o que foi a semana de arte moderna"
+    ],
+    "resposta": "A Semana de Arte Moderna de 1922, em São Paulo, marcou o início do modernismo cultural no Brasil."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "o que e o barroco"
+    ],
+    "resposta": "Barroco foi um estilo artístico surgido no século 17, marcado por dramaticidade, riqueza de detalhes e contrastes fortes."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "o que e o carnaval"
+    ],
+    "resposta": "Carnaval é uma das principais festas populares do Brasil, marcada por desfiles de escolas de samba, blocos de rua e fantasias."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "o que e uma escola de samba"
+    ],
+    "resposta": "Escola de samba é uma agremiação carnavalesca brasileira que desfila com samba-enredo, fantasias e carros alegóricos durante o carnaval."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "o que e o folclore brasileiro"
+    ],
+    "resposta": "Folclore brasileiro é o conjunto de tradições, lendas, danças e costumes populares do Brasil, como a lenda do Saci e o boi-bumbá."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "quem foi machado de assis"
+    ],
+    "resposta": "Machado de Assis é considerado um dos maiores escritores brasileiros, autor de obras como Dom Casmurro e Memórias Póstumas de Brás Cubas."
+  },
+  {
+    "categoria": "arte_cultura",
+    "perguntas": [
+      "quem foi clarice lispector"
+    ],
+    "resposta": "Clarice Lispector foi uma escritora brasileira, uma das mais importantes da literatura em língua portuguesa do século 20."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem escreveu romeu e julieta"
+    ],
+    "resposta": "Romeu e Julieta foi escrito por William Shakespeare, dramaturgo inglês do século 16."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem foi william shakespeare"
+    ],
+    "resposta": "William Shakespeare foi um escritor e dramaturgo inglês, considerado um dos maiores autores da literatura mundial."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem escreveu dom quixote"
+    ],
+    "resposta": "Dom Quixote foi escrito pelo espanhol Miguel de Cervantes, publicado no início do século 17."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "o que e um oscar"
+    ],
+    "resposta": "O Oscar é o principal prêmio da indústria cinematográfica, entregue anualmente pela Academia de Artes e Ciências Cinematográficas dos Estados Unidos."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem dirigiu o senhor dos aneis"
+    ],
+    "resposta": "A trilogia O Senhor dos Anéis foi dirigida por Peter Jackson, baseada nos livros de J.R.R. Tolkien."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem escreveu o senhor dos aneis"
+    ],
+    "resposta": "O Senhor dos Anéis foi escrito pelo autor britânico J.R.R. Tolkien."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem foi walt disney"
+    ],
+    "resposta": "Walt Disney foi um animador e empresário americano, fundador dos estúdios Disney e pioneiro da animação comercial."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "o que e a pixar"
+    ],
+    "resposta": "Pixar é um estúdio de animação americano, famoso por filmes como Toy Story, Procurando Nemo e Divertida Mente."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem dirigiu jurassic park"
+    ],
+    "resposta": "Jurassic Park foi dirigido por Steven Spielberg, lançado em 1993."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem foi steven spielberg"
+    ],
+    "resposta": "Steven Spielberg é um cineasta americano, diretor de filmes como Jurassic Park, E.T. e A Lista de Schindler."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "o que e ficcao cientifica"
+    ],
+    "resposta": "Ficção científica é um gênero narrativo que explora avanços tecnológicos, viagens no espaço e futuros possíveis ou alternativos."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem escreveu 1984"
+    ],
+    "resposta": "1984 foi escrito pelo autor britânico George Orwell, publicado em 1949, uma crítica aos regimes totalitários."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem foi jorge amado"
+    ],
+    "resposta": "Jorge Amado foi um escritor brasileiro conhecido por romances como Gabriela, Cravo e Canela e Capitães da Areia."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "quem escreveu o pequeno principe"
+    ],
+    "resposta": "O Pequeno Príncipe foi escrito pelo francês Antoine de Saint-Exupéry, publicado em 1943."
+  },
+  {
+    "categoria": "cinema_literatura",
+    "perguntas": [
+      "o que e a netflix"
+    ],
+    "resposta": "Netflix é um serviço de streaming de filmes e séries por assinatura, fundado nos Estados Unidos em 1997."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e um algoritmo"
+    ],
+    "resposta": "Algoritmo é uma sequência de passos bem definidos para resolver um problema ou realizar uma tarefa."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e hardware"
+    ],
+    "resposta": "Hardware é a parte física de um computador, como processador, memória, placa-mãe e periféricos."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e software"
+    ],
+    "resposta": "Software é o conjunto de programas e instruções que fazem um computador funcionar, incluindo o sistema operacional e os aplicativos."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e a internet"
+    ],
+    "resposta": "Internet é uma rede mundial de computadores interligados, que permite a troca de informações entre praticamente qualquer lugar do mundo."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "quem inventou a internet"
+    ],
+    "resposta": "A internet surgiu de um projeto militar americano chamado ARPANET, nos anos 1960, e evoluiu com contribuições de diversos pesquisadores ao longo das décadas."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e um servidor"
+    ],
+    "resposta": "Servidor é um computador ou programa que fornece dados, arquivos ou serviços para outros computadores conectados a ele, chamados de clientes."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e a nuvem",
+      "o que e computacao em nuvem"
+    ],
+    "resposta": "Computação em nuvem é o uso de servidores remotos, acessados pela internet, para armazenar dados e executar programas sem depender do computador local."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e um byte"
+    ],
+    "resposta": "Byte é a unidade básica de medida de informação em computação, formada por 8 bits."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e criptografia"
+    ],
+    "resposta": "Criptografia é a técnica de transformar informações em um código, para que só quem tem a chave correta consiga lê-las."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e um firewall"
+    ],
+    "resposta": "Firewall é um sistema de segurança que controla o tráfego de dados entre uma rede e a internet, bloqueando acessos não autorizados."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e codigo aberto",
+      "o que e open source"
+    ],
+    "resposta": "Código aberto, ou open source, é quando o código-fonte de um programa é disponibilizado publicamente para qualquer pessoa usar, estudar ou modificar."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e um bug"
+    ],
+    "resposta": "Bug é um erro em um programa de computador que faz ele se comportar de forma inesperada ou incorreta."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e realidade virtual"
+    ],
+    "resposta": "Realidade virtual é uma tecnologia que simula um ambiente digital imersivo, geralmente por meio de óculos especiais."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e realidade aumentada"
+    ],
+    "resposta": "Realidade aumentada é uma tecnologia que sobrepõe elementos digitais ao mundo real, geralmente vistos pela câmera de um celular ou óculos especiais."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e a internet das coisas",
+      "o que e iot"
+    ],
+    "resposta": "Internet das Coisas, ou IoT, é a conexão de objetos do dia a dia à internet, permitindo que eles coletem e troquem dados, como sensores e eletrodomésticos inteligentes."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e inflacao"
+    ],
+    "resposta": "Inflação é o aumento generalizado e contínuo dos preços de bens e serviços em uma economia, reduzindo o poder de compra da moeda."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e pib"
+    ],
+    "resposta": "PIB, ou Produto Interno Bruto, é a soma de todos os bens e serviços produzidos por um país em determinado período, usada para medir o tamanho de uma economia."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e taxa de juros"
+    ],
+    "resposta": "Taxa de juros é o percentual cobrado ou pago pelo uso do dinheiro em um empréstimo, financiamento ou investimento."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e a selic"
+    ],
+    "resposta": "Selic é a taxa básica de juros da economia brasileira, definida pelo Banco Central, usada como referência para todas as outras taxas de juros do país."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e uma acao na bolsa de valores"
+    ],
+    "resposta": "Ação é uma pequena parte do capital de uma empresa; quem a compra se torna sócio e pode ganhar com a valorização ou os dividendos."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e a bolsa de valores"
+    ],
+    "resposta": "Bolsa de valores é o ambiente onde ações e outros ativos financeiros de empresas são comprados e vendidos."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e o dolar"
+    ],
+    "resposta": "Dólar é a moeda oficial dos Estados Unidos, também usada como principal referência de comércio internacional no mundo."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e criptomoeda"
+    ],
+    "resposta": "Criptomoeda é uma moeda digital que usa criptografia e geralmente uma tecnologia chamada blockchain para funcionar sem depender de um banco central."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e o bitcoin"
+    ],
+    "resposta": "Bitcoin foi a primeira e é a mais conhecida criptomoeda do mundo, criada em 2009 por um autor com o pseudônimo Satoshi Nakamoto."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e oferta e demanda"
+    ],
+    "resposta": "Oferta e demanda é o princípio econômico básico que explica como o preço de um produto varia conforme a quantidade disponível e o interesse dos compradores."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e o pib per capita"
+    ],
+    "resposta": "PIB per capita é o valor do PIB de um país dividido pelo número de habitantes, usado para estimar a riqueza média por pessoa."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e recessao economica"
+    ],
+    "resposta": "Recessão é um período de queda na atividade econômica de um país, geralmente marcado por dois trimestres seguidos de queda no PIB."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e um monopolio"
+    ],
+    "resposta": "Monopólio é quando uma única empresa domina totalmente um mercado, sem concorrência relevante."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e importacao e exportacao"
+    ],
+    "resposta": "Importação é a compra de produtos de outros países, e exportação é a venda de produtos nacionais para o exterior."
+  },
+  {
+    "categoria": "economia",
+    "perguntas": [
+      "o que e o imposto de renda"
+    ],
+    "resposta": "Imposto de renda é o tributo cobrado sobre os rendimentos de pessoas e empresas, usado pelo governo para financiar serviços públicos."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e o efeito estufa"
+    ],
+    "resposta": "Efeito estufa é o processo natural em que gases da atmosfera retêm calor do Sol, mantendo a Terra aquecida; quando intensificado pela poluição, causa o aquecimento global."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e o aquecimento global"
+    ],
+    "resposta": "Aquecimento global é o aumento da temperatura média do planeta, causado principalmente pelo excesso de gases do efeito estufa lançados pela atividade humana."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e reciclagem"
+    ],
+    "resposta": "Reciclagem é o processo de transformar materiais usados, como plástico, papel e vidro, em novos produtos, reduzindo o desperdício e a extração de recursos naturais."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e energia renovavel"
+    ],
+    "resposta": "Energia renovável é aquela obtida de fontes naturais que se renovam, como sol, vento, água e biomassa."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e energia solar"
+    ],
+    "resposta": "Energia solar é a energia elétrica gerada a partir da luz do sol, captada por painéis fotovoltaicos."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e energia eolica"
+    ],
+    "resposta": "Energia eólica é a energia elétrica gerada a partir do vento, captada por turbinas eólicas."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e o desmatamento"
+    ],
+    "resposta": "Desmatamento é a destruição ou remoção da vegetação natural de uma área, geralmente para agropecuária, mineração ou expansão urbana."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "qual e a maior bacia hidrografica do mundo"
+    ],
+    "resposta": "A Bacia Amazônica é a maior bacia hidrográfica do mundo."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e biodiversidade"
+    ],
+    "resposta": "Biodiversidade é a variedade de formas de vida existentes em um ecossistema, incluindo plantas, animais, fungos e microrganismos."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e um ecossistema"
+    ],
+    "resposta": "Ecossistema é o conjunto formado por seres vivos e o ambiente físico onde eles interagem entre si."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que sao os biomas brasileiros"
+    ],
+    "resposta": "Os principais biomas brasileiros são Amazônia, Cerrado, Caatinga, Mata Atlântica, Pampa e Pantanal."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e o pantanal"
+    ],
+    "resposta": "O Pantanal é a maior planície alagável do mundo, localizada principalmente em Mato Grosso e Mato Grosso do Sul, no Brasil."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e a camada de ozonio"
+    ],
+    "resposta": "A camada de ozônio é uma região da atmosfera que filtra boa parte da radiação ultravioleta do Sol, protegendo a vida na Terra."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que causa as chuvas acidas"
+    ],
+    "resposta": "Chuva ácida é causada pela poluição do ar, principalmente por gases de enxofre e nitrogênio liberados por indústrias e veículos."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e o ciclo da agua"
+    ],
+    "resposta": "Ciclo da água é o processo contínuo de evaporação, condensação e precipitação da água entre a superfície da Terra e a atmosfera."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o pais mais populoso do mundo"
+    ],
+    "resposta": "A Índia é atualmente o país mais populoso do mundo, superando a China."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e a lingua mais falada do mundo"
+    ],
+    "resposta": "Considerando falantes nativos, o mandarim é a língua mais falada do mundo; contando todos os falantes, o inglês tem o maior alcance global."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "quantos idiomas existem no mundo"
+    ],
+    "resposta": "Estima-se que existam entre 6 e 7 mil idiomas falados no mundo atualmente."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e a moeda oficial do brasil"
+    ],
+    "resposta": "A moeda oficial do Brasil é o Real."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "quantos fusos horarios tem o brasil"
+    ],
+    "resposta": "O Brasil tem 4 fusos horários oficiais."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e a cidade mais populosa do brasil"
+    ],
+    "resposta": "São Paulo é a cidade mais populosa do Brasil."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o maior estado do brasil"
+    ],
+    "resposta": "O Amazonas é o maior estado do Brasil em extensão territorial."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "quantas letras tem o alfabeto"
+    ],
+    "resposta": "O alfabeto usado no português tem 26 letras."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o oceano que fica entre a america e a europa"
+    ],
+    "resposta": "O Oceano Atlântico fica entre as Américas e a Europa/África."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e a torre mais alta do mundo"
+    ],
+    "resposta": "O Burj Khalifa, em Dubai, é o edifício mais alto do mundo, com mais de 828 metros."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e a maior muralha do mundo"
+    ],
+    "resposta": "A Grande Muralha da China é considerada a maior estrutura construída pelo homem, com milhares de quilômetros de extensão."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "quantos fusos horarios existem no mundo"
+    ],
+    "resposta": "Existem cerca de 24 fusos horários principais no mundo, um para cada hora do dia."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o rio mais longo do mundo"
+    ],
+    "resposta": "O Rio Nilo e o Rio Amazonas disputam o título de rio mais longo do mundo, dependendo do critério de medição usado."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o pais com mais fuso horario"
+    ],
+    "resposta": "A Rússia é o país com o maior número de fusos horários, com 11 no total."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "quantos paises fazem fronteira com o brasil"
+    ],
+    "resposta": "O Brasil faz fronteira com 10 países da América do Sul."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e a menor moeda do mundo"
+    ],
+    "resposta": "Não existe uma resposta única e universal, mas moedas de países com economias pequenas costumam ter o menor valor de câmbio em relação ao dólar."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "quantos hemisferios tem a terra"
+    ],
+    "resposta": "A Terra é dividida em 2 hemisférios: norte e sul (além da divisão leste-oeste pelos meridianos)."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e a linha que divide o hemisferio norte e sul"
+    ],
+    "resposta": "A linha do Equador é a linha imaginária que divide a Terra entre hemisfério norte e hemisfério sul."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "o que e o meridiano de greenwich"
+    ],
+    "resposta": "O Meridiano de Greenwich é a linha de referência usada para calcular as longitudes e os fusos horários do mundo."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e a bandeira mais antiga do mundo ainda em uso"
+    ],
+    "resposta": "A bandeira da Dinamarca é considerada uma das mais antigas do mundo ainda em uso oficial."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "quantos planetas tem anel no sistema solar"
+    ],
+    "resposta": "Quatro planetas do sistema solar têm anéis: Júpiter, Saturno, Urano e Netuno, sendo os de Saturno os mais visíveis."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o metal mais caro do mundo"
+    ],
+    "resposta": "O ródio é um dos metais mais caros do mundo, usado principalmente em catalisadores automotivos."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o metal mais leve do mundo"
+    ],
+    "resposta": "O lítio é o metal mais leve que existe naturalmente."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o material mais duro do mundo"
+    ],
+    "resposta": "O diamante é considerado o material natural mais duro do mundo."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o elemento quimico mais abundante no universo"
+    ],
+    "resposta": "O hidrogênio é o elemento químico mais abundante no universo."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o elemento quimico mais abundante na terra"
+    ],
+    "resposta": "O oxigênio é o elemento mais abundante na crosta terrestre."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "quantos musculos usamos para sorrir"
+    ],
+    "resposta": "Sorrir usa em média entre 10 e 12 músculos do rosto, dependendo da intensidade do sorriso."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e a temperatura media do sol"
+    ],
+    "resposta": "A superfície do Sol tem uma temperatura de aproximadamente 5.500 graus Celsius; o núcleo chega a cerca de 15 milhões de graus."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "quanto tempo a luz do sol leva para chegar na terra"
+    ],
+    "resposta": "A luz do Sol leva cerca de 8 minutos e 20 segundos para chegar até a Terra."
+  },
+  {
+    "categoria": "curiosidades",
+    "perguntas": [
+      "qual e o pais com mais ilhas do mundo"
+    ],
+    "resposta": "A Suécia é frequentemente citada como o país com mais ilhas do mundo, com mais de 200 mil."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e um pixel"
+    ],
+    "resposta": "Pixel é a menor unidade de uma imagem digital, um pequeno ponto de cor que, junto com outros, forma a imagem na tela."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e resolucao de tela"
+    ],
+    "resposta": "Resolução de tela é a quantidade de pixels exibidos, na largura e na altura, em uma tela; quanto maior, mais nítida a imagem."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e um sistema operacional"
+    ],
+    "resposta": "Sistema operacional é o software principal que gerencia os recursos de um computador e permite a execução de outros programas, como Windows, Linux e macOS."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e uma api"
+    ],
+    "resposta": "API é uma interface que permite que diferentes programas de software se comuniquem entre si, trocando dados e funcionalidades."
+  },
+  {
+    "categoria": "informatica",
+    "perguntas": [
+      "o que e um banco de dados"
+    ],
+    "resposta": "Banco de dados é um sistema organizado para armazenar, consultar e gerenciar grandes quantidades de informação."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "quantas medalhas de ouro o brasil tem em olimpiadas",
+      "quantas medalhas o brasil tem em olimpiadas"
+    ],
+    "resposta": "O Brasil já conquistou mais de 150 medalhas olímpicas ao longo da sua história, entre ouro, prata e bronze."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "o que e o handebol"
+    ],
+    "resposta": "Handebol é um esporte coletivo jogado com as mãos, em que duas equipes de 7 jogadores tentam marcar gols em uma quadra."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "o que e o rugby"
+    ],
+    "resposta": "Rugby é um esporte coletivo de contato físico intenso, jogado com uma bola oval, em que o objetivo é levar a bola até a linha de gol adversária."
+  },
+  {
+    "categoria": "esportes",
+    "perguntas": [
+      "o que e o skate olimpico",
+      "skate e esporte olimpico"
+    ],
+    "resposta": "O skate street e o skate park se tornaram modalidades olímpicas oficiais a partir dos Jogos de Tóquio 2020."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "o que e um acorde"
+    ],
+    "resposta": "Acorde é a combinação de três ou mais notas musicais tocadas ao mesmo tempo."
+  },
+  {
+    "categoria": "musica",
+    "perguntas": [
+      "quantas cordas tem um baixo eletrico"
+    ],
+    "resposta": "Um baixo elétrico convencional tem 4 cordas, embora existam modelos com 5 ou 6."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "quanto tempo vive uma abelha"
+    ],
+    "resposta": "A abelha operária vive em média algumas semanas no verão, podendo viver alguns meses no inverno."
+  },
+  {
+    "categoria": "animais",
+    "perguntas": [
+      "quantos anos vive um elefante"
+    ],
+    "resposta": "Elefantes podem viver entre 60 e 70 anos na natureza."
+  },
+  {
+    "categoria": "saude",
+    "perguntas": [
+      "o que e uma alergia"
+    ],
+    "resposta": "Alergia é uma reação exagerada do sistema imunológico a uma substância normalmente inofensiva, como pólen, poeira ou certos alimentos."
+  },
+  {
+    "categoria": "saude",
+    "perguntas": [
+      "o que e o sistema imunologico"
+    ],
+    "resposta": "Sistema imunológico é o conjunto de células e órgãos que defende o corpo contra vírus, bactérias e outros agentes invasores."
+  },
+  {
+    "categoria": "natureza",
+    "perguntas": [
+      "o que e a fotossintese"
+    ],
+    "resposta": "Fotossíntese é o processo pelo qual as plantas usam luz solar, água e dióxido de carbono para produzir energia e liberar oxigênio."
+  }
+]

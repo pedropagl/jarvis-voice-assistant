@@ -1,0 +1,55 @@
+{
+  "_comment": "Catalogo de pecas. Cada peca exige um material e cor especificos. Dados SIMULADOS. Somente leitura.",
+  "parts": [
+    {
+      "id": "P001",
+      "name": "capa protetora",
+      "required_material": "APEX",
+      "required_color": "vermelho",
+      "required_extrusor": 1,
+      "est_print_time_min": 45,
+      "quantity_available": 7,
+      "notes": "Exige APEX vermelho. Compativel com a M04 (extrusor 1)."
+    },
+    {
+      "id": "P002",
+      "name": "suporte lateral",
+      "required_material": "ABS",
+      "required_color": "cinza",
+      "required_extrusor": 1,
+      "est_print_time_min": 70,
+      "quantity_available": 12,
+      "notes": "Exige ABS cinza. Compativel com a M02."
+    },
+    {
+      "id": "P003",
+      "name": "acabamento interno",
+      "required_material": "PETG",
+      "required_color": "azul",
+      "required_extrusor": 1,
+      "est_print_time_min": 30,
+      "quantity_available": 0,
+      "notes": "Exige PETG azul. Compativel com a M03 (atualmente em manutencao)."
+    },
+    {
+      "id": "P004",
+      "name": "base de fixacao",
+      "required_material": "PLA",
+      "required_color": "preto",
+      "required_extrusor": 1,
+      "est_print_time_min": 55,
+      "quantity_available": 5,
+      "notes": "Exige PLA preto. Compativel com a M01 (extrusor 1)."
+    },
+    {
+      "id": "P005",
+      "name": "tampa frontal",
+      "required_material": "APEX",
+      "required_color": "preto",
+      "required_extrusor": 2,
+      "est_print_time_min": 50,
+      "quantity_available": 3,
+      "notes": "Exige APEX preto. Compativel com a M04 (extrusor 2)."
+    }
+  ]
+}

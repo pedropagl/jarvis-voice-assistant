@@ -1,0 +1,62 @@
+{
+  "_comment": "Base de maquinas (impressoras 3D). Dados SIMULADOS para a Fase 1. Somente leitura.",
+  "machines": [
+    {
+      "id": "M01",
+      "model": "Creator Pro X1",
+      "status": "imprimindo",
+      "build_volume_mm": { "x": 300, "y": 300, "z": 400 },
+      "extruders": [
+        { "id": 1, "material": "PLA", "color": "preto", "nozzle_mm": 0.4 },
+        { "id": 2, "material": "PLA", "color": "branco", "nozzle_mm": 0.4 }
+      ],
+      "last_maintenance": "2026-05-10",
+      "notes": "Maquina ocupada com producao em andamento."
+    },
+    {
+      "id": "M02",
+      "model": "Creator Pro X1",
+      "status": "ocioso",
+      "build_volume_mm": { "x": 300, "y": 300, "z": 400 },
+      "extruders": [
+        { "id": 1, "material": "ABS", "color": "cinza", "nozzle_mm": 0.4 }
+      ],
+      "last_maintenance": "2026-05-18",
+      "notes": "Disponivel. Material ABS cinza carregado."
+    },
+    {
+      "id": "M03",
+      "model": "Industrial Z700",
+      "status": "manutencao",
+      "build_volume_mm": { "x": 350, "y": 350, "z": 700 },
+      "extruders": [
+        { "id": 1, "material": "PETG", "color": "azul", "nozzle_mm": 0.6 }
+      ],
+      "last_maintenance": "2026-06-11",
+      "notes": "Em manutencao preventiva. Indisponivel."
+    },
+    {
+      "id": "M04",
+      "model": "Industrial Z700",
+      "status": "ocioso",
+      "build_volume_mm": { "x": 350, "y": 350, "z": 700 },
+      "extruders": [
+        { "id": 1, "material": "APEX", "color": "vermelho", "nozzle_mm": 0.4 },
+        { "id": 2, "material": "APEX", "color": "preto", "nozzle_mm": 0.4 }
+      ],
+      "last_maintenance": "2026-05-22",
+      "notes": "Disponivel. Extrusor 1 com APEX vermelho, extrusor 2 com APEX preto."
+    },
+    {
+      "id": "M05",
+      "model": "Creator Pro X1",
+      "status": "ocioso",
+      "build_volume_mm": { "x": 300, "y": 300, "z": 400 },
+      "extruders": [
+        { "id": 1, "material": "PLA", "color": "vermelho", "nozzle_mm": 0.4 }
+      ],
+      "last_maintenance": "2026-05-15",
+      "notes": "Disponivel. Material PLA vermelho carregado."
+    }
+  ]
+}

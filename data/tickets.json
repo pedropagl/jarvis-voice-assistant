@@ -1,0 +1,45 @@
+{
+  "_comment": "Tickets (ordens de producao). quantity_required = total pedido; quantity_done = ja produzido. Faltante = required - done. Dados SIMULADOS. Somente leitura.",
+  "tickets": [
+    {
+      "id": "TK-2026-0523-01",
+      "date": "2026-05-23",
+      "client": "Industria Vega Ltda",
+      "sector": "montagem",
+      "priority": "alta",
+      "status": "em producao",
+      "items": [
+        { "part_id": "P001", "part_name": "capa protetora",    "quantity_required": 5, "quantity_done": 2 },
+        { "part_id": "P002", "part_name": "suporte lateral",   "quantity_required": 4, "quantity_done": 2 },
+        { "part_id": "P003", "part_name": "acabamento interno", "quantity_required": 2, "quantity_done": 1 }
+      ],
+      "notes": "Faltam 3 capas protetoras, 2 suportes laterais e 1 acabamento interno."
+    },
+    {
+      "id": "TK-2026-0528-01",
+      "date": "2026-05-28",
+      "client": "Metalplas S.A.",
+      "sector": "acabamento",
+      "priority": "media",
+      "status": "em producao",
+      "items": [
+        { "part_id": "P004", "part_name": "base de fixacao", "quantity_required": 6, "quantity_done": 6 },
+        { "part_id": "P005", "part_name": "tampa frontal",   "quantity_required": 3, "quantity_done": 1 }
+      ],
+      "notes": "Base de fixacao concluida. Faltam 2 tampas frontais."
+    },
+    {
+      "id": "TK-2026-0602-01",
+      "date": "2026-06-02",
+      "client": "Industria Vega Ltda",
+      "sector": "montagem",
+      "priority": "baixa",
+      "status": "aguardando",
+      "items": [
+        { "part_id": "P001", "part_name": "capa protetora",  "quantity_required": 2, "quantity_done": 0 },
+        { "part_id": "P004", "part_name": "base de fixacao", "quantity_required": 4, "quantity_done": 0 }
+      ],
+      "notes": "Producao ainda nao iniciada."
+    }
+  ]
+}

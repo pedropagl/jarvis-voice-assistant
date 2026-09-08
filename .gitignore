@@ -1,0 +1,30 @@
+# Segredos e ambiente
+.env
+credenciais/
+
+# Ambiente virtual
+.venv/
+venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Logs (historico de uso, nao e codigo)
+logs/*.log
+logs/*.jsonl
+
+# Configuracao local do Claude Code (nao e parte do projeto)
+.claude/
+
+# Dados gerados em tempo de execucao (nao sao codigo, mudam a cada uso —
+# nao fazem sentido versionados, so gerariam ruido no historico).
+data/dashboard_state.json
+data/push_subscriptions.json
+data/relatorio_estado.json
+data/metricas.db
+data/*.tmp
+
+# Biometria de voz das pessoas do lab: dado pessoal sensivel, NUNCA vai
+# pro GitHub (nem privado). Fica so local.
+data/voiceprints.json
