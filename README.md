@@ -1,32 +1,51 @@
-# JARVIS — Assistente de Produção (Fase 1: Arquitetura)
+# JARVIS — Assistente do Laboratório de Impressão 3D
 
-Assistente de voz para manufatura / impressão 3D. **Modo somente leitura** nesta versão:
-a JARVIS apenas consulta dados, nunca altera, apaga ou modifica produção. Os dados são
-**simulados** em arquivos JSON na pasta `data/`.
+Assistente de voz/chat com painel de produção ao vivo, integrado ao sistema
+real da fábrica (**catos**) via MCP. Responde perguntas sobre máquinas,
+tickets, peças e produção, reconhece quem está falando por biometria de voz,
+e mostra tudo num painel de TV/PC em tempo real.
 
-> Esta entrega cobre **apenas a Fase 1**: estrutura, arquivos base e boot. Sem voz, sem
-> Gemini, sem consulta avançada e sem interface ainda.
+## O que o sistema faz
+
+- **Conversa por voz ou texto** sobre máquinas, tickets, peças faltantes e
+  produção pendente — com dados **reais** do catos quando disponível, ou
+  dados simulados (`data/*.json`) como fallback.
+- **Painel ao vivo** (`dashboard/`): radar de todas as máquinas, painel de
+  eficiência da frota, tendência de produção, tickets e alertas — atualiza
+  sozinho, sem precisar recarregar a página.
+- **Biometria de voz**: identifica quem está falando, sem depender de senha.
+- **Catálogo de conhecimento local** (`data/conhecimento.json`): responde
+  perguntas comuns (matemática, história, geopolítica, robótica, impressão
+  3D, etc.) sem gastar chamada de API.
+- **Modo somente leitura**: a JARVIS nunca altera, apaga ou executa ações
+  destrutivas no sistema real — só consulta.
+- **Integrações opcionais** (todas desativadas por padrão até configuradas
+  no `.env` — nada quebra sem elas):
+  - Notificação push no navegador/celular quando uma máquina entra em alerta.
+  - Alerta por WhatsApp.
+  - Relatório quinzenal de produção (Google Sheets + e-mail).
+  - PWA instalável (funciona como app no Android/iOS).
 
 ## Estrutura
+
 ```
 jarvis_empresa/
-├── main.py                 # Boot: carrega dados e confirma que o projeto inicia
-├── requirements.txt        # Dependencias (Fase 1: apenas python-dotenv)
-├── .env.example            # Modelo de variaveis de ambiente (copiar para .env)
-├── .gitignore
-├── core/                   # Cerebro da assistente (voz, Gemini, roteamento, seguranca, logs)
-├── company_system/         # Acesso aos dados da empresa (maquinas, pecas, tickets, regras)
-├── data/                   # Bases simuladas em JSON (somente leitura)
-├── dashboard/              # Painel da TV (placeholders; construido na Fase 11)
-└── logs/                   # Registro de interacoes (interactions.log)
+├── main.py                    # Boot / modo texto e voz
+├── core/                      # Cerebro: roteamento, LLM, MCP, voz, integracoes
+├── company_system/            # Acesso aos dados da empresa (mock/fallback)
+├── data/                      # Dados simulados + catalogo de conhecimento
+├── dashboard/                 # Painel web (HTML/CSS/JS) + servidor local
+├── credenciais/                # Chaves de integracoes (NAO versionado)
+├── scripts/                   # Scripts auxiliares (ex.: gerar catalogo)
+└── logs/                      # Registro de interacoes
 ```
 
-## Como rodar no Windows (PowerShell)
+## Como instalar
 
-1. **Criar a pasta do projeto** e colocar os arquivos dentro dela (ou descompactar o zip).
+1. **Clonar e entrar na pasta do projeto:**
    ```powershell
-   cd C:\Projetos
-   cd jarvis_empresa
+   git clone https://github.com/pedropagl/jarvis-voice-assistant.git
+   cd jarvis-voice-assistant
    ```
 
 2. **Criar e ativar o ambiente virtual:**
@@ -34,25 +53,39 @@ jarvis_empresa/
    python -m venv .venv
    .\.venv\Scripts\Activate.ps1
    ```
-   > Se o PowerShell bloquear a ativação, rode uma vez:
-   > `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
-   > (No Prompt de Comando, a ativação é `.\.venv\Scripts\activate.bat`.)
 
 3. **Instalar as dependências:**
    ```powershell
    pip install -r requirements.txt
    ```
 
-4. **Configurar o ambiente:** copie `.env.example` para `.env`.
+4. **Configurar o ambiente:** copie `.env.example` para `.env` e preencha o
+   que for usar (provedor de LLM, token do catos, integrações opcionais).
    ```powershell
    copy .env.example .env
    ```
-   Na Fase 1 não é preciso preencher a `GEMINI_API_KEY` (ela só será usada na Fase 7).
 
-5. **Rodar o projeto:**
-   ```powershell
-   python main.py
-   ```
-   Você deve ver o banner da JARVIS, o resumo do boot (5 máquinas, 5 peças, 3 tickets,
-   modo somente leitura) e a confirmação de inicialização. O mesmo registro aparece em
-   `logs/interactions.log`.
+## Como usar
+
+```powershell
+jarvis --chat              # conversar digitando
+jarvis --chat --voz        # digitando, com resposta em audio
+jarvis --mic                # microfone ao vivo + biometria de voz
+jarvis --cadastrar-voz      # cadastra a voz de uma pessoa do lab
+jarvis painel               # abre o painel (dashboard) no navegador
+jarvis mcp                  # testa a conexao com o catos
+```
+
+Para o painel abrir **automaticamente ao ligar o PC**, rode uma vez:
+```powershell
+instalar_autostart.bat
+```
+(reverte com `instalar_autostart.bat remover`)
+
+## Segurança
+
+- Chaves e senhas ficam **só** no `.env` e em `credenciais/` — nunca no
+  código, e ambos fora do controle de versão (`.gitignore`).
+- A JARVIS só executa ferramentas de **leitura** no catos; ações que
+  alterariam dados são bloqueadas por padrão (`core/mcp_client.py`).
+- Dados de biometria de voz (`data/voiceprints.json`) nunca são versionados.
