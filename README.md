@@ -1,11 +1,22 @@
-# JARVIS — Assistente do Laboratório de Impressão 3D
+# 🤖 JARVIS — Assistente do Laboratório de Impressão 3D
+
+![Python](https://img.shields.io/badge/python-3.13-blue?logo=python&logoColor=white)
+![Status](https://img.shields.io/badge/status-em%20produção-brightgreen)
+![Licença](https://img.shields.io/badge/uso-interno%20GOS-lightgrey)
 
 Assistente de voz/chat com painel de produção ao vivo, integrado ao sistema
 real da fábrica (**catos**) via MCP. Responde perguntas sobre máquinas,
 tickets, peças e produção, reconhece quem está falando por biometria de voz,
 e mostra tudo num painel de TV/PC em tempo real.
 
-## O que o sistema faz
+<!--
+  📸 Print do painel aqui: tire um screenshot do dashboard (modo PC, com
+  dados carregados) e salve como docs/screenshot-painel.png. Depois troque
+  a linha abaixo por:
+  ![Painel da JARVIS](docs/screenshot-painel.png)
+-->
+
+## 📋 O que o sistema faz
 
 - **Conversa por voz ou texto** sobre máquinas, tickets, peças faltantes e
   produção pendente — com dados **reais** do catos quando disponível, ou
@@ -26,7 +37,7 @@ e mostra tudo num painel de TV/PC em tempo real.
   - Relatório quinzenal de produção (Google Sheets + e-mail).
   - PWA instalável (funciona como app no Android/iOS).
 
-## Estrutura
+## 🗂️ Estrutura
 
 ```
 jarvis_empresa/
@@ -40,7 +51,7 @@ jarvis_empresa/
 └── logs/                      # Registro de interacoes
 ```
 
-## Como instalar
+## ⚙️ Como instalar
 
 1. **Clonar e entrar na pasta do projeto:**
    ```powershell
@@ -65,7 +76,7 @@ jarvis_empresa/
    copy .env.example .env
    ```
 
-## Como usar
+## ▶️ Como usar
 
 ```powershell
 jarvis --chat              # conversar digitando
@@ -82,7 +93,7 @@ instalar_autostart.bat
 ```
 (reverte com `instalar_autostart.bat remover`)
 
-## Segurança
+## 🔒 Segurança
 
 - Chaves e senhas ficam **só** no `.env` e em `credenciais/` — nunca no
   código, e ambos fora do controle de versão (`.gitignore`).
