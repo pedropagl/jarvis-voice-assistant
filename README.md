@@ -18,9 +18,20 @@ e mostra tudo num painel de TV/PC em tempo real.
 
 ## O que o sistema faz
 
-- **Conversa por voz ou texto** sobre máquinas, tickets, peças faltantes e
-  produção pendente — com dados **reais** do catos quando disponível, ou
-  dados simulados (`data/*.json`) como fallback.
+- **Agente de verdade, não um script de regras**: pra consultas e pra ações,
+  quem decide quais ferramentas chamar (consultar máquina, ticket, peças,
+  agendar, enviar para impressora) é a própria LLM, em loop de tool-calling
+  (`core/agente_mcp.py`, `core/agente_acoes.py`) — com confirmação humana
+  antes de qualquer ação real.
+- **Memória persistente e compartilhada** (`core/memoria.py`): histórico de
+  conversa sobrevive a reinícios (~20 trocas), e a JARVIS guarda sozinha
+  fatos de longo prazo relevantes (preferências, decisões, contexto do lab).
+  Busca por **significado** (embeddings), não só palavra-chave, com fallback
+  automático se a API de embeddings não estiver disponível. Fatos com prazo
+  (ex.: "reservada por 2 semanas") expiram sozinhos.
+- **Resumo proativo diário** (`core/resumo_diario.py`): uma vez por dia, sem
+  ninguém perguntar, monta um panorama do lab (máquinas, alertas, produção
+  pendente, memória) e publica no painel, por voz e/ou WhatsApp.
 - **Painel ao vivo** (`dashboard/`): radar de todas as máquinas, painel de
   eficiência da frota, tendência de produção, tickets e alertas — atualiza
   sozinho, sem precisar recarregar a página.
@@ -29,7 +40,7 @@ e mostra tudo num painel de TV/PC em tempo real.
   perguntas comuns (matemática, história, geopolítica, robótica, impressão
   3D, etc.) sem gastar chamada de API.
 - **Modo somente leitura**: a JARVIS nunca altera, apaga ou executa ações
-  destrutivas no sistema real — só consulta.
+  destrutivas no sistema real sem confirmação humana explícita.
 - **Integrações opcionais** (todas desativadas por padrão até configuradas
   no `.env` — nada quebra sem elas):
   - Notificação push no navegador/celular quando uma máquina entra em alerta.
@@ -42,7 +53,11 @@ e mostra tudo num painel de TV/PC em tempo real.
 ```
 jarvis_empresa/
 ├── main.py                    # Boot / modo texto e voz
-├── core/                      # Cerebro: roteamento, LLM, MCP, voz, integracoes
+├── core/                      # Cerebro: agentes, LLM, MCP, memoria, voz, integracoes
+│   ├── agente_mcp.py          #   agente de consultas (tool-calling)
+│   ├── agente_acoes.py        #   agente de acoes (tool-calling + confirmacao)
+│   ├── memoria.py             #   memoria persistente (historico + fatos)
+│   └── resumo_diario.py       #   resumo proativo diario
 ├── company_system/            # Acesso aos dados da empresa (mock/fallback)
 ├── data/                      # Dados simulados + catalogo de conhecimento
 ├── dashboard/                 # Painel web (HTML/CSS/JS) + servidor local
@@ -98,5 +113,8 @@ instalar_autostart.bat
 - Chaves e senhas ficam **só** no `.env` e em `credenciais/` — nunca no
   código, e ambos fora do controle de versão (`.gitignore`).
 - A JARVIS só executa ferramentas de **leitura** no catos; ações que
-  alterariam dados são bloqueadas por padrão (`core/mcp_client.py`).
+  alterariam dados exigem confirmação humana explícita antes de rodar
+  (`core/agente_acoes.py`), nunca são executadas sozinhas.
 - Dados de biometria de voz (`data/voiceprints.json`) nunca são versionados.
+- A memória (`data/memoria.db`) também fica fora do controle de versão — pode
+  conter contexto pessoal sobre as pessoas do lab.
