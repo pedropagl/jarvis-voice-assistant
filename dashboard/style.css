@@ -572,6 +572,31 @@ body::after {
 .pulso-vital.alerta .pulso-ponto { background: var(--error); box-shadow: 0 0 8px var(--error); }
 .pulso-vital.alerta #pulso-texto, .pulso-vital.alerta { color: var(--error); }
 
+.resumo-dia {
+  position: relative;
+  margin: 10px 0;
+  padding: 10px 30px 10px 14px;
+  border: 1px solid rgba(0,200,255,.4);
+  border-left: 3px solid var(--accent-2);
+  border-radius: 2px;
+  background: rgba(0,200,255,.06);
+  text-align: left;
+  animation: entra-de-baixo .4s ease-out;
+}
+.resumo-dia-label {
+  font-size: 10px; letter-spacing: 2px; color: var(--accent-2);
+  margin-bottom: 4px;
+}
+.resumo-dia-texto {
+  font-size: 13px; color: var(--text); line-height: 1.4;
+}
+.resumo-dia-x {
+  position: absolute; top: 6px; right: 8px;
+  background: none; border: none; color: var(--text-dim);
+  font-size: 16px; line-height: 1; cursor: pointer; padding: 2px 4px;
+}
+.resumo-dia-x:hover { color: var(--text); }
+
 /* O HUD inteiro "respira" junto com a producao real: quanto mais maquinas
    imprimindo, mais rapido o pulso/giro (--pulse e --spin-slow sao setados
    dinamicamente pelo app.js). Quando ha maquina em manutencao/offline, o

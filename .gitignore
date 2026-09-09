@@ -22,6 +22,7 @@ logs/*.jsonl
 data/dashboard_state.json
 data/push_subscriptions.json
 data/relatorio_estado.json
+data/resumo_estado.json
 data/metricas.db
 data/*.tmp
 

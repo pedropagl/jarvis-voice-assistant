@@ -445,13 +445,19 @@ def interpretar(pergunta: str, operador: str | None = None,
         "function": {
             "name": _TOOL_LEMBRAR,
             "description": (
-                "Guarda PERMANENTEMENTE um fato para lembrar em conversas futuras "
-                "(mesmo apos reiniciar) — preferencia de um operador, decisao tomada, "
-                "contexto recorrente do lab. Use com moderacao."),
+                "Guarda um fato para lembrar em conversas futuras (mesmo apos "
+                "reiniciar) — preferencia de um operador, decisao tomada, contexto "
+                "recorrente do lab. Use com moderacao. Se o fato tiver PRAZO (ex.: "
+                "'M04 reservada por 2 semanas'), preencha validade_dias pra ele "
+                "expirar sozinho."),
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "fato": {"type": "string", "description": "O fato a guardar, em uma frase clara e autocontida."}
+                    "fato": {"type": "string", "description": "O fato a guardar, em uma frase clara e autocontida."},
+                    "validade_dias": {
+                        "type": "integer",
+                        "description": "Opcional: em quantos dias esse fato deixa de valer. Omita para fatos permanentes.",
+                    },
                 },
                 "required": ["fato"],
             },
@@ -571,7 +577,7 @@ def interpretar(pergunta: str, operador: str | None = None,
                 except Exception as err:  # noqa: BLE001
                     resultado = f"ERRO ao buscar impressoras compativeis: {err}"
             elif nome == _TOOL_LEMBRAR:
-                resultado = memoria.lembrar_fato(args.get("fato", ""))
+                resultado = memoria.lembrar_fato(args.get("fato", ""), args.get("validade_dias"))
             elif nome == _TOOL_BUSCAR_FATOS:
                 encontrados = memoria.buscar_fatos(args.get("consulta", ""))
                 resultado = "\n".join(f"- {f}" for f in encontrados) if encontrados else "Nenhum fato guardado sobre isso."

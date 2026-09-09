@@ -327,6 +327,18 @@ def _refresh_overview() -> None:
             relatorio_quinzenal.verificar_e_enviar()
         except Exception:  # noqa: BLE001 - relatorio nunca derruba o servidor
             pass
+        try:
+            from core import resumo_diario
+            # Checagem barata (so le uma data); so gera/publica de fato 1x por dia.
+            resumo_diario.gerar_e_publicar()
+        except Exception:  # noqa: BLE001 - resumo nunca derruba o servidor
+            pass
+        try:
+            from core import memoria
+            # Limpeza barata (so roda DELETE se houver algo vencido).
+            memoria.limpar_fatos_vencidos()
+        except Exception:  # noqa: BLE001 - limpeza nunca derruba o servidor
+            pass
         time.sleep(_REFRESH_INTERVALO_S)
 
 

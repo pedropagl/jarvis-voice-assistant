@@ -315,14 +315,21 @@ def responder(pergunta: str,
         "function": {
             "name": _TOOL_LEMBRAR,
             "description": (
-                "Guarda PERMANENTEMENTE um fato para lembrar em conversas futuras "
-                "(mesmo apos reiniciar) — preferencia de um operador, decisao tomada, "
-                "contexto recorrente do lab. Use com moderacao: so fatos genuinamente "
-                "uteis pro futuro, nao cada pergunta trivial."),
+                "Guarda um fato para lembrar em conversas futuras (mesmo apos "
+                "reiniciar) — preferencia de um operador, decisao tomada, contexto "
+                "recorrente do lab. Use com moderacao: so fatos genuinamente uteis "
+                "pro futuro, nao cada pergunta trivial. Se o fato tiver PRAZO/validade "
+                "(ex.: 'M04 reservada por 2 semanas', 'peca urgente ate sexta'), "
+                "preencha validade_dias para ele expirar sozinho — nao fique guardado "
+                "pra sempre coisa que so vale por um tempo."),
             "parameters": {
                 "type": "object",
                 "properties": {
-                    "fato": {"type": "string", "description": "O fato a guardar, em uma frase clara e autocontida."}
+                    "fato": {"type": "string", "description": "O fato a guardar, em uma frase clara e autocontida."},
+                    "validade_dias": {
+                        "type": "integer",
+                        "description": "Opcional: em quantos dias esse fato deixa de valer/ser verdade. Omita para fatos permanentes.",
+                    },
                 },
                 "required": ["fato"],
             },
@@ -442,7 +449,7 @@ def responder(pergunta: str,
 
             # Ferramentas de MEMORIA: resolvidas localmente (core/memoria.py).
             if nome == _TOOL_LEMBRAR:
-                resultado = memoria.lembrar_fato(args.get("fato", ""))
+                resultado = memoria.lembrar_fato(args.get("fato", ""), args.get("validade_dias"))
                 mensagens.append({"role": "tool", "tool_call_id": tc.id, "content": resultado})
                 continue
             if nome == _TOOL_BUSCAR_FATOS:

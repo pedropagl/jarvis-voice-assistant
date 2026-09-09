@@ -122,6 +122,7 @@
     aplicarPulsoVital(s.machines || []);
     renderEficiencia(s.machines || []);
     renderTendenciaProducao(s.production_history || []);
+    renderResumoDia(s.daily_summary || null);
 
     // Resposta principal
     setTextoComFlash("main-response", s.main_response);
@@ -300,6 +301,30 @@
       "points",
       `0,${H} ` + coords.map(([x, y]) => `${x},${y}`).join(" ") + ` ${W},${H}`
     );
+  }
+
+  // ---------------------------------------------------------------------
+  // Resumo do dia: card proativo (core/resumo_diario.py gera 1x por dia).
+  // Pode ser dispensado — fica escondido ate o texto mudar (dia seguinte).
+  // ---------------------------------------------------------------------
+  function renderResumoDia(resumo) {
+    const card = $("resumo-dia");
+    if (!card) return;
+
+    if (!resumo || !resumo.texto) {
+      card.hidden = true;
+      return;
+    }
+
+    let dispensado = "";
+    try { dispensado = localStorage.getItem("jarvis_resumo_dispensado") || ""; } catch (_) {}
+    if (dispensado === resumo.texto) {
+      card.hidden = true;
+      return;
+    }
+
+    $("resumo-dia-texto").textContent = resumo.texto;
+    card.hidden = false;
   }
 
   function renderVisualMaquina(m) {
@@ -741,6 +766,15 @@
     $("btn-mode").addEventListener("click", alternarModo);
     $("btn-fs").addEventListener("click", alternarTelaCheia);
     $("ask-form").addEventListener("submit", enviarPergunta);
+
+    const btnFecharResumo = $("resumo-dia-fechar");
+    if (btnFecharResumo) {
+      btnFecharResumo.addEventListener("click", () => {
+        const texto = $("resumo-dia-texto").textContent;
+        try { localStorage.setItem("jarvis_resumo_dispensado", texto); } catch (_) {}
+        $("resumo-dia").hidden = true;
+      });
+    }
 
     // Lembra a preferencia de "ouvir aqui" por aparelho (fica marcado no celular).
     const chkOuvir = $("ask-ouvir");
