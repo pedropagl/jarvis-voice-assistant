@@ -80,6 +80,7 @@ from company_system import tickets
 from core import biometria
 from core import gemini_brain
 from core import mcp_client
+from core import memoria
 from core import metricas
 from core import painel
 from core import security
@@ -130,6 +131,9 @@ def boot() -> dict:
 
     # Banco de metricas de impacto (silencioso, em background). Idempotente.
     metricas.inicializar_db()
+
+    # Banco de memoria persistente (historico + fatos de longo prazo). Idempotente.
+    memoria.inicializar_db()
 
     print("\n--- RESUMO DO BOOT ---")
     from core import llm_client, voice_output

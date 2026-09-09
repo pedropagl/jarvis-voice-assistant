@@ -26,7 +26,7 @@ import json
 import re
 import unicodedata
 
-from core import llm_client, mcp_client
+from core import llm_client, mcp_client, memoria
 from core.logger import get_logger
 
 log = get_logger("jarvis.agente")
@@ -37,6 +37,12 @@ log = get_logger("jarvis.agente")
 # ignora que um fatiamento usa DOIS materiais (extrusor 0 e 1), agrupa peca sob
 # o material errado e ate inventa compatibilidade. Aqui o casamento e exato.
 _TOOL_PECAS_IMPRESSORA = "pecas_compativeis_na_impressora"
+
+# Ferramentas de MEMORIA DE LONGO PRAZO (core/memoria.py) — a propria LLM
+# decide o que vale a pena guardar (preferencias, decisoes, contexto
+# recorrente) e pode buscar isso depois, mesmo em outra sessao/reinicio.
+_TOOL_LEMBRAR = "lembrar_fato"
+_TOOL_BUSCAR_FATOS = "buscar_fatos"
 
 # Limite de rodadas de tool-calling por pergunta (evita loop e estoura de custo).
 _MAX_ITERACOES = 5
@@ -94,6 +100,16 @@ Como agir:
   para ele repetir o pedido com essa palavra (ex.: "diga 'inicia a producao
   dessa peca' que eu preparo e peco sua confirmacao"), pois so assim o pedido
   entra no fluxo de acao com confirmacao. NUNCA finja executar a acao aqui.
+- MEMORIA DE LONGO PRAZO: voce tem a ferramenta lembrar_fato para guardar
+  permanentemente algo que vale a pena lembrar em conversas futuras — uma
+  preferencia de operador, uma decisao tomada, um contexto recorrente do lab
+  (ex.: "a M04 costuma ser reservada pro Pedro", "o ticket X e prioridade alta").
+  Use-a PROATIVAMENTE quando notar algo assim, sem precisar que o operador peca
+  "lembra disso" explicitamente — mas so guarde fatos genuinamente uteis para o
+  futuro, nao cada pergunta trivial. Use buscar_fatos quando precisar checar algo
+  que pode ja ter sido guardado antes (ex.: preferencia de alguem, decisao antiga).
+  Abaixo, na secao "MEMORIA DE LONGO PRAZO", ja estao os fatos mais recentes —
+  consulte-os primeiro antes de decidir se vale chamar buscar_fatos de novo.
 
 Estilo da resposta final: portugues do Brasil, tom falado, curto e direto (1 a 2
 frases). Sem markdown, sem listas, sem emojis. Se um dado nao existir no sistema,
@@ -291,9 +307,59 @@ def responder(pergunta: str,
         },
     })
 
-    log.info("Agente MCP: %d ferramentas disponiveis (inclui sintetica).", len(tools))
+    # Ferramentas de MEMORIA DE LONGO PRAZO (core/memoria.py) — sinteticas,
+    # nao vao ao catos.
+    nomes_validos.add(_TOOL_LEMBRAR)
+    tools.append({
+        "type": "function",
+        "function": {
+            "name": _TOOL_LEMBRAR,
+            "description": (
+                "Guarda PERMANENTEMENTE um fato para lembrar em conversas futuras "
+                "(mesmo apos reiniciar) — preferencia de um operador, decisao tomada, "
+                "contexto recorrente do lab. Use com moderacao: so fatos genuinamente "
+                "uteis pro futuro, nao cada pergunta trivial."),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "fato": {"type": "string", "description": "O fato a guardar, em uma frase clara e autocontida."}
+                },
+                "required": ["fato"],
+            },
+        },
+    })
+    nomes_validos.add(_TOOL_BUSCAR_FATOS)
+    tools.append({
+        "type": "function",
+        "function": {
+            "name": _TOOL_BUSCAR_FATOS,
+            "description": (
+                "Busca fatos guardados anteriormente na memoria de longo prazo, por "
+                "palavra-chave. Use quando suspeitar que algo relevante ja foi "
+                "guardado antes (preferencia de alguem, decisao antiga) e isso nao "
+                "aparece na secao MEMORIA DE LONGO PRAZO do prompt."),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "consulta": {"type": "string", "description": "Palavras-chave para buscar."}
+                },
+                "required": ["consulta"],
+            },
+        },
+    })
 
-    mensagens = [{"role": "system", "content": _SYSTEM_PROMPT}]
+    log.info("Agente MCP: %d ferramentas disponiveis (inclui sinteticas).", len(tools))
+
+    # Memoria "ambiente": os fatos de longo prazo mais recentes ja entram no
+    # prompt, sem precisar de uma chamada de ferramenta so pra descobrir o que
+    # a JARVIS ja sabe.
+    fatos_recentes = memoria.listar_fatos_recentes()
+    prompt_sistema = _SYSTEM_PROMPT
+    if fatos_recentes:
+        bloco_fatos = "\n".join(f"- {f}" for f in fatos_recentes)
+        prompt_sistema += f"\n\nMEMORIA DE LONGO PRAZO (fatos guardados antes):\n{bloco_fatos}"
+
+    mensagens = [{"role": "system", "content": prompt_sistema}]
     if historico:
         mensagens.extend(historico)
     mensagens.append({"role": "user", "content": pergunta})
@@ -372,6 +438,17 @@ def responder(pergunta: str,
                 log.info("Agente MCP: cruzamento deterministico pecas x %s.", maquina)
                 mensagens.append({"role": "tool", "tool_call_id": tc.id,
                                   "content": resultado or "(sem conteudo)"})
+                continue
+
+            # Ferramentas de MEMORIA: resolvidas localmente (core/memoria.py).
+            if nome == _TOOL_LEMBRAR:
+                resultado = memoria.lembrar_fato(args.get("fato", ""))
+                mensagens.append({"role": "tool", "tool_call_id": tc.id, "content": resultado})
+                continue
+            if nome == _TOOL_BUSCAR_FATOS:
+                encontrados = memoria.buscar_fatos(args.get("consulta", ""))
+                resultado = "\n".join(f"- {f}" for f in encontrados) if encontrados else "Nenhum fato guardado sobre isso."
+                mensagens.append({"role": "tool", "tool_call_id": tc.id, "content": resultado})
                 continue
 
             try:

@@ -34,7 +34,7 @@ import re
 import unicodedata
 from datetime import datetime
 
-from core import llm_client, mcp_client
+from core import llm_client, mcp_client, memoria
 from core.logger import get_logger
 
 log = get_logger("jarvis.acoes")
@@ -312,6 +312,11 @@ def _schema_acao(nome: str) -> dict:
 # cruzamento e deterministico e por GUID exato.
 _TOOL_BUSCAR_COMPATIVEL = "buscar_impressora_compativel"
 
+# Ferramentas de MEMORIA DE LONGO PRAZO (core/memoria.py) — compartilhadas com
+# o agente de consultas (core/agente_mcp.py), mesma memoria, mesmo banco.
+_TOOL_LEMBRAR = "lembrar_fato"
+_TOOL_BUSCAR_FATOS = "buscar_fatos"
+
 
 def _impressoras_compativeis(material_guid: str, somente_ociosas: bool = True) -> str:
     """
@@ -433,11 +438,52 @@ def interpretar(pergunta: str, operador: str | None = None,
         },
     })
 
+    # Ferramentas de MEMORIA DE LONGO PRAZO (core/memoria.py) — mesma memoria
+    # compartilhada com o agente de consultas.
+    tools.append({
+        "type": "function",
+        "function": {
+            "name": _TOOL_LEMBRAR,
+            "description": (
+                "Guarda PERMANENTEMENTE um fato para lembrar em conversas futuras "
+                "(mesmo apos reiniciar) — preferencia de um operador, decisao tomada, "
+                "contexto recorrente do lab. Use com moderacao."),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "fato": {"type": "string", "description": "O fato a guardar, em uma frase clara e autocontida."}
+                },
+                "required": ["fato"],
+            },
+        },
+    })
+    tools.append({
+        "type": "function",
+        "function": {
+            "name": _TOOL_BUSCAR_FATOS,
+            "description": "Busca fatos guardados anteriormente na memoria de longo prazo, por palavra-chave.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "consulta": {"type": "string", "description": "Palavras-chave para buscar."}
+                },
+                "required": ["consulta"],
+            },
+        },
+    })
+
     agora = datetime.now().strftime("%Y-%m-%d %H:%M")
     contexto_tempo = (f"\n\nReferencia de tempo: agora sao {agora} (use isto para "
                       f"data_agendada — 'imprimir agora' = use esta data/hora; "
                       f"datas relativas como 'amanha 8h' calcule a partir daqui).")
-    mensagens = [{"role": "system", "content": _SYSTEM_PROMPT + contexto_tempo}]
+
+    fatos_recentes = memoria.listar_fatos_recentes()
+    contexto_memoria = ""
+    if fatos_recentes:
+        bloco_fatos = "\n".join(f"- {f}" for f in fatos_recentes)
+        contexto_memoria = f"\n\nMEMORIA DE LONGO PRAZO (fatos guardados antes):\n{bloco_fatos}"
+
+    mensagens = [{"role": "system", "content": _SYSTEM_PROMPT + contexto_tempo + contexto_memoria}]
     if historico:
         # Contexto da conversa: resolve "essa capa", "nela", etc. So mensagens
         # de texto (user/assistant) — sem tool_calls antigos, que confundiriam.
@@ -524,6 +570,11 @@ def interpretar(pergunta: str, operador: str | None = None,
                              args.get("material_guid"))
                 except Exception as err:  # noqa: BLE001
                     resultado = f"ERRO ao buscar impressoras compativeis: {err}"
+            elif nome == _TOOL_LEMBRAR:
+                resultado = memoria.lembrar_fato(args.get("fato", ""))
+            elif nome == _TOOL_BUSCAR_FATOS:
+                encontrados = memoria.buscar_fatos(args.get("consulta", ""))
+                resultado = "\n".join(f"- {f}" for f in encontrados) if encontrados else "Nenhum fato guardado sobre isso."
             elif nome in nomes_leitura:
                 try:
                     # Para ferramentas com campo 'search' que usa nomes acentuados,

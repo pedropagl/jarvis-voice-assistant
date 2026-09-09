@@ -25,6 +25,10 @@ data/relatorio_estado.json
 data/metricas.db
 data/*.tmp
 
+# Memoria persistente da JARVIS (historico de conversa + fatos guardados
+# pela LLM) — pode conter contexto pessoal sobre as pessoas do lab.
+data/memoria.db
+
 # Biometria de voz das pessoas do lab: dado pessoal sensivel, NUNCA vai
 # pro GitHub (nem privado). Fica so local.
 data/voiceprints.json

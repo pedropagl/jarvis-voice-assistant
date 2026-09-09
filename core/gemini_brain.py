@@ -39,6 +39,7 @@ from core import agente_mcp
 from core import command_router
 from core import conhecimento
 from core import llm_client
+from core import memoria
 from core import metricas
 from core import security
 from core.command_router import (
@@ -59,10 +60,22 @@ log = get_logger("jarvis.gemini")
 ANO_ATUAL = 2026  # alinhado com tickets.ANO_ATUAL; data sem ano usa este valor
 
 # Historico de conversa: guarda as ultimas N trocas (user + assistant) para
-# que o agente MCP mantenha contexto entre turnos ("M04" apos "qual peca posso
+# que os agentes mantenham contexto entre turnos ("M04" apos "qual peca posso
 # fazer sem trocar filamento?" resolve corretamente, por exemplo).
-_HISTORICO: list[dict] = []
-_MAX_TURNOS_HISTORICO = 3  # 3 trocas = 6 mensagens; mais que isso vira ruido
+#
+# PERSISTENTE: carregado do banco (core/memoria.py) na primeira vez que e
+# usado neste processo, entao o contexto sobrevive a reinicios — antes ficava
+# so em RAM (3 trocas, sumia toda vez que o processo caia).
+_HISTORICO: list[dict] | None = None  # None = ainda nao carregado nesta sessao
+
+
+def _historico_atual() -> list[dict]:
+    """Historico em memoria deste processo — carregado (uma vez) do banco
+    persistente na primeira chamada."""
+    global _HISTORICO
+    if _HISTORICO is None:
+        _HISTORICO = memoria.carregar_historico()
+    return _HISTORICO
 
 
 _VERBOS_ACAO_LIBERADA = re.compile(
@@ -455,14 +468,17 @@ def responder(pergunta: str, resultado_router: dict) -> str:
 # ===========================================================================
 
 def _atualizar_historico(pergunta: str, resposta: str) -> None:
-    """Adiciona a troca atual ao historico e descarta as mais antigas se necessario."""
-    global _HISTORICO
-    _HISTORICO.append({"role": "user", "content": pergunta})
-    _HISTORICO.append({"role": "assistant", "content": resposta})
-    # Mantém só os últimos _MAX_TURNOS_HISTORICO turnos (2 msgs por turno).
-    max_msgs = _MAX_TURNOS_HISTORICO * 2
-    if len(_HISTORICO) > max_msgs:
-        _HISTORICO = _HISTORICO[-max_msgs:]
+    """Adiciona a troca atual ao historico (memoria do processo + banco
+    persistente, para sobreviver a reinicios) e descarta as mais antigas."""
+    historico = _historico_atual()
+    historico.append({"role": "user", "content": pergunta})
+    historico.append({"role": "assistant", "content": resposta})
+    # Mantém só os últimos N mensagens (janela "alta memoria" — ver core/memoria.py).
+    max_msgs = memoria.JANELA_HISTORICO_MENSAGENS
+    if len(historico) > max_msgs:
+        del historico[: len(historico) - max_msgs]
+    memoria.salvar_turno("user", pergunta)
+    memoria.salvar_turno("assistant", resposta)
 
 
 @metricas.medir_comando  # cronometra, classifica e grava a metrica em background
@@ -559,7 +575,7 @@ def processar(texto: str, texto_falado: str | None = None,
             erro = None
             try:
                 resposta = agente_acoes.interpretar(
-                    texto, operador=operador, historico=list(_HISTORICO))
+                    texto, operador=operador, historico=list(_historico_atual()))
                 resultado = {"intencao": intencao, "ok": True, "dados": None,
                              "resumo": resposta, "insuficiente": False}
                 # Guarda a troca: a descricao ("Vou agendar X na M04") da contexto
@@ -581,7 +597,7 @@ def processar(texto: str, texto_falado: str | None = None,
             intencao = "mcp_agente"
             erro = None
             try:
-                resposta, ent_mcp = agente_mcp.responder(texto, historico=list(_HISTORICO))
+                resposta, ent_mcp = agente_mcp.responder(texto, historico=list(_historico_atual()))
                 entidades = ent_mcp  # agente MCP popula as entidades
                 resultado = {"intencao": intencao, "ok": True, "dados": None,
                              "resumo": resposta, "insuficiente": False}
